@@ -72,11 +72,12 @@ public enum Chest {
         }
 
         player.startEvent(event -> {
-            player.sendFilteredMessage("You have activated a trap on the " + chest.name);
+            player.sendFilteredMessage("You have activated a trap on the chest");
             player.lock();
             player.animate(832);
             event.delay(1);
-            player.hit(new Hit().fixedDamage(9).delay(0));//Prob not the right amount of damage, seen one guy get hit a 9 in a vid so copied that lol
+            int damage = (player.getHp() / 10) + 2;//I think all chests do the same damage... didn't test them all tho
+            player.hit(new Hit().fixedDamage(damage).delay(0));
             player.unlock();
         });
     }
