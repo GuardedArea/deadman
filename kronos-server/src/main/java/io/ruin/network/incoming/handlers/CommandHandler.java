@@ -1720,6 +1720,16 @@ public class CommandHandler implements Incoming {
                 return true;
             }
 
+            case "runes": {
+                if (isCommunityManager) {
+                    return false;
+                }
+                for (Rune rune : Rune.values()) {
+                    player.getInventory().add(rune.getId(), Integer.MAX_VALUE);
+                }
+                return true;
+            }
+
             case "setbase": {
                 relativeBase = player.getPosition().copy();
                 player.sendMessage("Base set to: " + relativeBase.toString());
