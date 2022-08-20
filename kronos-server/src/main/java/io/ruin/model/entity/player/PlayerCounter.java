@@ -107,6 +107,7 @@ public enum PlayerCounter {
     MONKEY_GENERAL_STALL_THIEVES((p, amt) -> p.monkeyGeneralStallThieves = amt, p -> p.monkeyGeneralStallThieves),
     TEA_STALL_THIEVES((p, amt) -> p.teaStallThieves = amt, p -> p.teaStallThieves),
     SILK_STALL_THIEVES((p, amt) -> p.silkStallThieves = amt, p -> p.silkStallThieves),
+    FRUIT_STALL_THIEVES((p, amt) -> p.fruitStallThieves = amt, p -> p.fruitStallThieves),
     WINE_STALL_THIEVES((p, amt) -> p.wineStallThieves = amt, p -> p.wineStallThieves),
     SEED_STALL_THIEVES((p, amt) -> p.seedStallThieves = amt, p -> p.seedStallThieves),
     FUR_STALL_THIEVES((p, amt) -> p.furStallThieves = amt, p -> p.furStallThieves),
