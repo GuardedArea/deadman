@@ -3,7 +3,7 @@ package io.ruin.api.protocol.world;
 public enum WorldType {
     ECO("Kronos", "https://kronos.rip"),
     BETA("Kronos BETA", "https://kronos.rip"),
-    PVP("KronosPK", "https://kronos.rip"),
+    PVP("Deadman mode", "https://kronos.rip"),
     DEV("Development", "http://127.0.0.1");
 
     WorldType(String worldName, String websiteUrl) {
