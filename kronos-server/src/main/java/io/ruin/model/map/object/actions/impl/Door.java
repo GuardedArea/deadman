@@ -484,6 +484,8 @@ public class Door {
                 return;
             if (def.id == 34553 || def.id == 34554) // alchemical hydra doors
                 return;
+            if (def.id == 22945 || def.id == 6919 || def.id == 6920) // dorgesh-kaan doors
+                return;
             String name = def.name.toLowerCase();
             if (name.contains("gate")) {
                 def.gateType = true;
