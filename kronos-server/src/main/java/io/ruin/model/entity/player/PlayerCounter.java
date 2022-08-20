@@ -119,6 +119,8 @@ public enum PlayerCounter {
     SCIMITAR_STALL_THIEVES((p, amt) -> p.scimitarStallThieves = amt, p -> p.scimitarStallThieves),
     GEM_STALL_THIEVES((p, amt) -> p.gemStallThieves = amt, p -> p.gemStallThieves),
     MOR_GEM_STALL_THIEVES((p, amt) -> p.gemMorStallThieves = amt, p -> p.gemMorStallThieves),
+
+    CHEST_10_COINS_THIEVES((p, amt) -> p.chest10CoinsThieves = amt, p -> p.chest10CoinsThieves),
     ORE_STALL_THIEVES((p, amt) -> p.oreStallThieves = amt, p -> p.oreStallThieves),
     PICKPOCKETED_MAN((p, amt) -> p.pickpocketMan = amt, p -> p.pickpocketMan),
     PICKPOCKETED_FARMER((p, amt) -> p.pickpocketFarmer = amt, p -> p.pickpocketFarmer),
