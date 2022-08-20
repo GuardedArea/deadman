@@ -40,7 +40,7 @@ public enum Stall {
                     {6163, 6984},
                     {11730, 634}
             },
-            new Item(22521, 1),
+            null,
             new LootTable().addTable(1,
                     new LootItem(1891, 1, 3),                    //Cake
                     new LootItem(2309, 1, 6),                    //Bread
