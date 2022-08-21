@@ -68,7 +68,7 @@ public enum Chest {
             new LootTable().addTable(1,
                     new LootItem(41, 5, 1)//COINS
             )),
-    CHEST_DORGESH_KAAN_AVERAGE(52, 90, 200.0, 8000, "Chest (steel arrowtips)",
+    CHEST_DORGESH_KAAN_AVERAGE(52, 90, 200.0, 8000, "Chest (steel arrowtips)",//TODO: Add the zanik and oldak version of this chest (has the same id, so we would need to add something new to tell the difference)
             PlayerCounter.CHEST_THIEVES,
             new int[][]{
                     {22697, 22699}
@@ -81,6 +81,16 @@ public enum Chest {
                     new LootItem(4548, 1, 1),//Bullseye lantern
                     new LootItem(5014, 1, 1),//Mining helmet
                     new LootItem(10981, 1, 1)//Cave goblin wire
+            )),
+    CHEST_BLOOD_RUNES(59, 135, 250.0, 5000, "Chest (blood runes)",
+            PlayerCounter.CHEST_THIEVES,
+            new int[][]{
+                    {11738, 11743}
+            },
+            true,
+            new Item(995, 500),
+            new LootTable().addTable(1,
+                    new LootItem(565,2, 1)//BLOOD RUNES
             ));
 
     public final int levelReq, respawnTime, petOdds;
@@ -174,6 +184,11 @@ public enum Chest {
             player.animate(832);
             event.delay(1);
             player.sendFilteredMessage("You find treasure inside!");
+            if(chest.name.equals("Chest (blood runes)")) {
+                event.delay(2);
+                player.sendFilteredMessage("Suddenly a second magical trap triggers.");
+                player.getMovement().teleport(2584, 3337, 0);
+            }
             replaceChest(chest, object, replacementID, player);
             Item loot = chest.lootTable.rollItem();
             player.getInventory().add(loot);
