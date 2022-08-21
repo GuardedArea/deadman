@@ -1,12 +1,16 @@
 package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.Server;
+import io.ruin.api.utils.Random;
 import io.ruin.cache.ObjectDef;
+import io.ruin.model.activities.warriorsguild.WarriorsGuild;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -531,11 +535,6 @@ public class Door {
                     def.reversedConstructionDoor = true;
                     break;
                 }
-            }
-            if (def.doorClosed = def.hasOption("pick-lock")) {
-                ObjectAction.register(def.id, "pick-lock", (player, obj) -> {
-                    player.sendMessage("TODO: HANDLE PICKLOCK DOORS");
-                });
             }
             if (def.doorClosed = def.hasOption("open"))
                 ObjectAction.register(def.id, "open", Door::handle);
