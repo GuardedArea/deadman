@@ -91,7 +91,28 @@ public enum Chest {
             new Item(995, 500),
             new LootTable().addTable(1,
                     new LootItem(565,2, 1)//BLOOD RUNES
-            ));
+            )),
+    KING_LATHAS_CHEST(72, 500, 500.0, 3000, "Chest (ardougne castle)",
+            PlayerCounter.CHEST_THIEVES,
+            new int[][]{
+                    {11739, 11743}
+            },
+            true,
+            new Item(995, 1000),
+            new LootTable().addTable(1,
+                    new LootItem(383, 1, 1)//BLOOD RUNES
+            )),
+    STONE_CHEST(59, 2, 280.0, 10000, "Stone chest",
+            PlayerCounter.CHEST_THIEVES,
+            new int[][]{
+                    {34429, 34430}
+            },
+            false,
+            null,
+            new LootTable().addTable(1,
+                    new LootItem(995, Random.get(20, 260), 1)//COINS, TODO: Add entire loottable from https://oldschool.runescape.wiki/w/Stone_chest
+            ).addTable(1,
+                    new LootItem(360, 1, 1)));
 
     public final int levelReq, respawnTime, petOdds;
     public final int[][] objIDs;
@@ -185,9 +206,18 @@ public enum Chest {
             event.delay(1);
             player.sendFilteredMessage("You find treasure inside!");
             if(chest.name.equals("Chest (blood runes)")) {
-                event.delay(2);
+                event.delay(1);
                 player.sendFilteredMessage("Suddenly a second magical trap triggers.");
+                event.delay(1);
                 player.getMovement().teleport(2584, 3337, 0);
+            }
+            if(chest.name.equals("Chest (ardougne castle)")) {
+                event.delay(1);
+                player.sendFilteredMessage("Suddenly a second magical trap triggers.");
+                event.delay(1);
+                player.getMovement().teleport(2696, 3281, 0);
+                player.getInventory().add(new Item(449, 1));
+                player.getInventory().add(new Item(1623, 1));
             }
             replaceChest(chest, object, replacementID, player);
             Item loot = chest.lootTable.rollItem();
@@ -260,6 +290,94 @@ public enum Chest {
         });
     }
 
+    private static void picklockStoneChest(Player player, Chest chest, GameObject object, int replacementID) {
+        if (!player.getStats().check(StatType.Thieving, chest.levelReq, "steal from the " + chest.name))
+            return;
+        if (player.getInventory().isFull()) {
+            player.privateSound(2277);
+            player.dialogue(new MessageDialogue("Your inventory is too full to hold any more."));
+            return;
+        }
+
+/*        if(player.getInventory().count(stall.bloodMoneyReward.getId()) >= BloodMoneyPouch.MAX_ALLOWED) {
+            player.privateSound(2277);
+            player.dialogue(new MessageDialogue("You need to open the bloody pouches you have before attempting this."));
+            return;
+        }*/
+
+        if(player.edgevilleStallCooldown.isDelayed())
+            return;
+
+        if(BotPrevention.isBlocked(player)) {
+            player.sendMessage("You can't steal from a chest while a guard is watching you.");
+            return;
+        }
+
+        player.startEvent(event -> {
+            player.animate(832);
+            player.sendFilteredMessage("You attempt to picklock the chest.");
+            player.lock();
+            double succesChance = 0.3125;
+            if(player.debug) {
+                player.sendMessage("Succes chance: " + succesChance);
+            }
+            succesChance = succesChance + (0.008371 * (player.getStats().get(StatType.Thieving).currentLevel - 64));//Not the actual formula but a rough estimate on what it does
+            if(player.debug) {
+                player.sendMessage("Succes chance after initial multiplier based on lvl: " + succesChance);
+            }
+            if(player.getInventory().contains(1523)) {
+                //Player has a lockpick so increase the multiplier
+                succesChance += 0.1;
+            }
+            if(player.debug) {
+                player.sendMessage("Succes chance after lockpick multiplier: " + succesChance);
+            }
+            succesChance = succesChance * 10000;
+            int stoneChestRoll = Random.get(0, 10000);
+            if(stoneChestRoll > succesChance) {
+                if(player.debug) {
+                    player.sendMessage("Failed at the stone chest roll (" + stoneChestRoll + ") with a : " + succesChance);
+                }
+                event.delay(1);
+                player.sendFilteredMessage("You fail to picklock the chest.");
+                if(Random.get(0, 8) != 8) {
+                    player.sendFilteredMessage("TPING...?");
+                    player.animate(3865);
+                    player.graphics(1612);
+                    event.delay(1);
+                    player.sendMessage("You have activated a trap on the chest.");
+                    event.delay(2);
+                    player.getMovement().teleport(Random.get(1307, 1310), Random.get(3676, 3682), 0);
+                }
+            } else {
+                if (player.debug) {
+                    player.sendMessage("Succeeded at the stone chest roll (" + stoneChestRoll + ") with a : " + succesChance);
+                }
+                //TODO: add chance formula from wiki instead of 100% success
+                event.delay(1);
+                player.sendFilteredMessage("You manage to unlock the chest.");
+                event.delay(1);
+                player.sendFilteredMessage("You steal some loot from the chest.");
+                player.animate(832);
+                replaceChest(chest, object, replacementID, player);
+                Item loot = chest.lootTable.rollItem();
+                player.getInventory().add(loot);
+                Item coins = chest.bloodMoneyReward;
+                if (coins != null) {
+                    player.getInventory().add(coins);
+                }
+                if (player.getPosition().inBounds(HOME))
+                    player.edgevilleStallCooldown.delay(3);
+                if (Random.rollDie(chest.petOdds))
+                    Pet.ROCKY.unlock(player);
+                chest.counter.increment(player, 1);
+                player.getStats().addXp(StatType.Thieving, chest.experience, true);
+            }
+            BotPrevention.attemptBlock(player);
+            player.unlock();
+        });
+    }
+
     private static final Bounds HOME = new Bounds(2002, 3558, 2017, 3573, -1);
 
     private static void replaceChest(Chest chest, GameObject object, int replacementID, Player player) {
@@ -277,6 +395,7 @@ public enum Chest {
             for (int[] ids : chest.objIDs) {
                 ObjectAction.register(ids[0], "open", (player, obj) -> open(player, chest, obj, ids[1]));
                 ObjectAction.register(ids[0], "search for traps", (player, obj) -> attempt(player, chest, obj, ids[1]));
+                ObjectAction.register(ids[0], "picklock", (player, obj) -> picklockStoneChest(player, chest, obj, ids[1]));
                 ObjectAction.register(ids[0], "pick-lock", (player, obj) -> picklock(player, chest, obj, ids[1]));
             }
         }

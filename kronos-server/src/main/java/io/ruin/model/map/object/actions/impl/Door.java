@@ -532,11 +532,6 @@ public class Door {
                     break;
                 }
             }
-            if (def.doorClosed = def.hasOption("pick-lock")) {
-                ObjectAction.register(def.id, "pick-lock", (player, obj) -> {
-                    player.sendMessage("TODO: HANDLE PICKLOCK DOORS");
-                });
-            }
             if (def.doorClosed = def.hasOption("open"))
                 ObjectAction.register(def.id, "open", Door::handle);
             else
