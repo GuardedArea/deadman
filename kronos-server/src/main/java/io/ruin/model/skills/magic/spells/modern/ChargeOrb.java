@@ -1,8 +1,8 @@
 package io.ruin.model.skills.magic.spells.modern;
 
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.dialogue.skill.SkillDialogue;
-import io.ruin.model.inter.dialogue.skill.SkillItem;
+import io.ruin.model.inter.actions.skill.SkillDialogue;
+import io.ruin.model.inter.actions.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.skills.magic.Spell;
 import io.ruin.model.skills.magic.rune.Rune;

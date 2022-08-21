@@ -1,4 +1,4 @@
-package io.ruin.model.inter.dialogue.skill;
+package io.ruin.model.inter.actions.skill;
 
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.player.Player;

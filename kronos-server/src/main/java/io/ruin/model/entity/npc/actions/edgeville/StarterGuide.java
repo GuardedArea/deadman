@@ -114,18 +114,20 @@ public class StarterGuide {
 		player.inTutorial = true;
 		player.startEvent(event -> {
             player.lock(LockType.FULL_ALLOW_LOGOUT);
-			player.getMovement().teleport(2038, 3577, 0);
+			player.getMovement().teleport(3094, 3108, 0);
 			if (actuallyNew) {
 				player.openInterface(InterfaceType.MAIN, Interface.APPEARANCE_CUSTOMIZATION);
 				while (player.isVisibleInterface(Interface.APPEARANCE_CUSTOMIZATION)) {
 					event.delay(1);
 				}
-			}
-			NPC guide = new NPC(307).spawn(2037, 3577, 0, Direction.SOUTH, 0); // 307 is a copy of 306 without options so it doesnt get in other people's way
-			player.logoutListener = new LogoutListener().onLogout(p -> guide.remove());
+			}// 307 is a copy of 306 without options so it doesnt get in other people's was
+            NPC guide = null;
+            for (NPC npc : World.npcs) {
+                if(npc.getId() == 3308) {
+                    guide = npc;
+                }
+            }
 			player.getPacketSender().sendHintIcon(guide);
-			guide.face(player);
-			player.face(guide);
 			boolean startTutorial = false;
 			if (actuallyNew) {
 			    player.dialogue(
@@ -185,26 +187,23 @@ public class StarterGuide {
             }
 			if (startTutorial) {
 
+                NPC finalGuide = guide;
                 player.dialogue(new NPCDialogue(guide,
                 "Greetings, " + player.getName() + "! Welcome to " + World.type.getWorldName() + ".<br>" +
-                "Would you like to a run down on how the server works?"),
-                new OptionsDialogue("Play the tutorial?", new Option("Yes!", () -> introCutscene(guide, player)), new Option("No, I know what I'm doing!", () -> {
+                "Good Luck, Have Fun!"),
+                new OptionsDialogue(new Option("Thanks, I will.", () -> {
                     player.closeDialogue();
                     player.inTutorial = false;
                     player.logoutListener = null;
                     player.setTutorialStage(0);
                     player.unlock();
-                    guide.addEvent(evt -> {
-                        evt.delay(2);
-                        World.sendGraphics(86, 50, 0, guide.getPosition());
-                        guide.remove();
-                    });
+                    player.getMovement().teleport(3221,3218,0);
                 })));
             }
 		});
 	}
 
-    private static void introCutscene(NPC guide, Player player) {
+    /*private static void introCutscene(NPC guide, Player player) {
 
         guide.startEvent((e) -> {
             player.getPacketSender().sendClientScript(39, "i", 100);
@@ -272,7 +271,7 @@ public class StarterGuide {
             player.getPacketSender().resetCamera();
             player.setTutorialStage(1);
 
-            guide.getMovement().teleport(2031, 3577, 0);
+            guide.getMovement().teleport(2031, 3577, 0); //Need to remove after so tutorial is not bugged.
             player.getMovement().teleport(2032, 3577, 0);
             guide.face(player);
             player.face(guide);
@@ -295,7 +294,7 @@ public class StarterGuide {
             player.getPacketSender().resetCamera();
         });
     }
-
+    */
     private static void giveEcoStarter(Player player) {
         player.getInventory().add(COINS_995, 10000); // gp
         player.getInventory().add(558, 500); // Mind Rune

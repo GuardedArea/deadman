@@ -4,7 +4,6 @@ import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.YesNoDialogue;
-import io.ruin.model.inter.dialogue.skill.SkillItem;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemItemAction;
 import io.ruin.model.item.containers.Equipment;

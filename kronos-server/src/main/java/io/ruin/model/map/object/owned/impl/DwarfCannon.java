@@ -1,4 +1,4 @@
-package io.ruin.model.object.owned.impl;
+package io.ruin.model.map.object.owned.impl;
 
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
@@ -22,7 +22,7 @@ import io.ruin.model.map.Tile;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.map.route.routes.ProjectileRoute;
-import io.ruin.model.object.owned.OwnedObject;
+import io.ruin.model.map.object.owned.OwnedObject;
 import io.ruin.model.stat.StatType;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

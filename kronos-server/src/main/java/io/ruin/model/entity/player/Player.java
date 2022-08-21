@@ -26,7 +26,7 @@ import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.*;
-import io.ruin.model.inter.dialogue.skill.SkillDialogue;
+import io.ruin.model.inter.actions.skill.SkillDialogue;
 import io.ruin.model.inter.handlers.TeleportInterface;
 import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.inter.utils.Config;
@@ -63,8 +63,6 @@ import io.ruin.services.Loggers;
 import io.ruin.services.XenGroup;
 import io.ruin.utility.CS2Script;
 import io.ruin.utility.TickDelay;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.*;
