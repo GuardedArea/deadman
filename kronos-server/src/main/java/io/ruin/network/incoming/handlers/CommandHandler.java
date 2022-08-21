@@ -1711,6 +1711,16 @@ public class CommandHandler implements Incoming {
                 return true;
             }
 
+            case "itemoni": {
+                int parent = Integer.parseInt(args[0]);
+                int child = Integer.parseInt(args[1]);
+                int item = Integer.parseInt(args[2]);
+                int amount = Integer.parseInt(args[3]);
+                player.getPacketSender().sendItem(parent, child, item, amount);
+                player.openInterface(InterfaceType.MAIN, parent);
+                return true;
+            }
+
             case "animateobj": {
                 Tile.getObject(-1, player.getAbsX(), player.getAbsY(), player.getHeight(), 10, -1).animate(Integer.parseInt(args[0]));
                 return true;
