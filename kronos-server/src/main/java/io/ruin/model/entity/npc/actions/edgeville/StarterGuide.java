@@ -131,7 +131,7 @@ public class StarterGuide {
 			boolean startTutorial = false;
 			if (actuallyNew) {
 			    player.dialogue(
-			            new NPCDialogue(guide, "Please select an experience mode.<br>" +
+			            new NPCDialogue(guide, "Please select an experience mode!<br>" +
                                 "You can change this later, but only to an easier<br>" +
                                 "experience mode, not harder."),
                         new OptionsDialogue(
