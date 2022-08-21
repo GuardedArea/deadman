@@ -199,6 +199,7 @@ public abstract class PlayerAttributes extends Entity {
     @Expose public int gemStallThieves;
     @Expose public int gemMorStallThieves;
     @Expose public int oreStallThieves;
+    @Expose public int chestThieves;
     @Expose public int pickpocketMan;
     @Expose public int pickpocketFarmer;
     @Expose public int pickpocketWarrior;

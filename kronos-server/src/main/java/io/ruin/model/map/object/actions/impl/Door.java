@@ -484,6 +484,8 @@ public class Door {
                 return;
             if (def.id == 34553 || def.id == 34554) // alchemical hydra doors
                 return;
+            if (def.id == 22945 || def.id == 6919 || def.id == 6920) // dorgesh-kaan doors
+                return;
             String name = def.name.toLowerCase();
             if (name.contains("gate")) {
                 def.gateType = true;
@@ -529,6 +531,11 @@ public class Door {
                     def.reversedConstructionDoor = true;
                     break;
                 }
+            }
+            if (def.doorClosed = def.hasOption("pick-lock")) {
+                ObjectAction.register(def.id, "pick-lock", (player, obj) -> {
+                    player.sendMessage("TODO: HANDLE PICKLOCK DOORS");
+                });
             }
             if (def.doorClosed = def.hasOption("open"))
                 ObjectAction.register(def.id, "open", Door::handle);

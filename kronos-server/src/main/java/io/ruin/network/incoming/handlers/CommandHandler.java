@@ -37,6 +37,7 @@ import io.ruin.model.activities.raids.xeric.chamber.Chamber;
 import io.ruin.model.activities.raids.xeric.chamber.ChamberDefinition;
 import io.ruin.model.activities.raids.xeric.party.Party;
 import io.ruin.model.activities.wilderness.StaffBounty;
+import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.npc.NPC;
@@ -55,6 +56,7 @@ import io.ruin.model.inter.actions.skill.SkillDialogue;
 import io.ruin.model.inter.actions.skill.SkillItem;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.journal.presets.PresetCustom;
+import io.ruin.model.inter.journal.toggles.RiskProtection;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.inter.utils.Unlock;
@@ -1137,6 +1139,15 @@ public class CommandHandler implements Incoming {
                 return true;
             }
 
+            case "sendvarp": {
+                int[] ids = NumberUtils.toIntArray(args[0]);
+                int value = args.length > 1 ? NumberUtils.intValue(args[1]) : 0;
+                for(int id : ids) {
+                    if(id != -1)
+                        player.getPacketSender().sendVarp(id, value);
+                }
+                return true;
+            }
             case "item":
             case "pickup": {
                 int[] ids = NumberUtils.toIntArray(args[0]);
@@ -1200,6 +1211,53 @@ public class CommandHandler implements Incoming {
                 }
                 return true;
             }
+
+
+            case "testdmmoverlay":
+                player.openInterface(InterfaceType.UNUSED_OVERLAY2, Interface.WILDERNESS_OVERLAY);
+                for(int i = 0; i < InterfaceDef.COUNTS[Interface.WILDERNESS_OVERLAY]; i++) {
+                    player.getPacketSender().sendString(Interface.WILDERNESS_OVERLAY, i, "" + i);
+                    player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, i, false);
+                }
+                player.getPacketSender().sendVarp(20003, 0); //custom to make sure client doesn't think pvp world
+                player.getPacketSender().sendVarp(20002, 0);
+                return true;
+            case "testdmmoverlay2":
+                player.openInterface(InterfaceType.UNUSED_OVERLAY1, Interface.WILDERNESS_OVERLAY);
+                for(int i = 0; i < InterfaceDef.COUNTS[Interface.WILDERNESS_OVERLAY]; i++) {
+                    player.getPacketSender().sendString(Interface.WILDERNESS_OVERLAY, i, "" + i);
+                    player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, i, false);
+                }
+                player.getPacketSender().sendVarp(20003, 0); //custom to make sure client doesn't think pvp world
+                player.getPacketSender().sendVarp(20002, 0);
+                return true;
+            case "testdmmoverlay3":
+                player.openInterface(InterfaceType.SECONDARY_OVERLAY, Interface.WILDERNESS_OVERLAY);
+                for(int i = 0; i < InterfaceDef.COUNTS[Interface.WILDERNESS_OVERLAY]; i++) {
+                    player.getPacketSender().sendString(Interface.WILDERNESS_OVERLAY, i, "" + i);
+                    player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, i, false);
+                }
+                player.getPacketSender().sendVarp(20003, 0); //custom to make sure client doesn't think pvp world
+                player.getPacketSender().sendVarp(20002, 0);
+                return true;
+            case "testdmmoverlay4":
+                player.openInterface(InterfaceType.TARGET_OVERLAY, Interface.WILDERNESS_OVERLAY);
+                for(int i = 0; i < InterfaceDef.COUNTS[Interface.WILDERNESS_OVERLAY]; i++) {
+                    player.getPacketSender().sendString(Interface.WILDERNESS_OVERLAY, i, "" + i);
+                    player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, i, false);
+                }
+                player.getPacketSender().sendVarp(20003, 0); //custom to make sure client doesn't think pvp world
+                player.getPacketSender().sendVarp(20002, 0);
+                return true;
+            case "testdmmoverlay5":
+                player.openInterface(InterfaceType.PRIMARY_OVERLAY, Interface.WILDERNESS_OVERLAY);
+                for(int i = 0; i < InterfaceDef.COUNTS[Interface.WILDERNESS_OVERLAY]; i++) {
+                    player.getPacketSender().sendString(Interface.WILDERNESS_OVERLAY, i, "" + i);
+                    player.getPacketSender().setHidden(Interface.WILDERNESS_OVERLAY, i, false);
+                }
+                player.getPacketSender().sendVarp(20003, 0); //custom to make sure client doesn't think pvp world
+                player.getPacketSender().sendVarp(20002, 0);
+                return true;
 
             case "testinter":
                 player.openInterface(InterfaceType.MAIN, 718);
@@ -2277,6 +2335,13 @@ public class CommandHandler implements Incoming {
                 def.lootTable.calculate(def.name + " Loot Probability Table");
                 return true;
             }
+            case "ispvp":
+                if(World.isPVP()) {
+                    player.sendMessage("The world is PVP");
+                } else {
+                    player.sendMessage("The world is not PVP");
+                }
+                return true;
 
             case "ispawn": {
                 int id = Integer.valueOf(args[0]);
