@@ -348,6 +348,7 @@ public enum Chest {
                     player.sendMessage("You have activated a trap on the chest.");
                     event.delay(2);
                     player.getMovement().teleport(Random.get(1307, 1310), Random.get(3676, 3682), 0);
+                    player.unlock();
                 }
             } else {
                 if (player.debug) {
