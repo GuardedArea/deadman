@@ -68,7 +68,7 @@ public enum Chest {
             new LootTable().addTable(1,
                     new LootItem(41, 5, 1)//COINS
             )),
-    CHEST_DORGESH_KAAN_AVERAGE(52, 90, 200.0, 8000, "Chest (steel arrowtips)",//TODO: Add the zanik and oldak version of this chest (has the same id, so we would need to add something new to tell the difference)
+    CHEST_DORGESH_KAAN_AVERAGE(52, 90, 200.0, 8000, "Chest (Dorgesh-Kaan)",//TODO: Add the zanik and oldak version of this chest (has the same id, so we would need to add something new to tell the difference)
             PlayerCounter.CHEST_THIEVES,
             new int[][]{
                     {22697, 22699}
@@ -81,6 +81,30 @@ public enum Chest {
                     new LootItem(4548, 1, 1),//Bullseye lantern
                     new LootItem(5014, 1, 1),//Mining helmet
                     new LootItem(10981, 1, 1)//Cave goblin wire
+            )),
+    CHEST_DORGESH_KAAN_RICH(78, 300, 650, 5000, "Chest (Dorgesh-Kaan Rich)",
+            PlayerCounter.CHEST_THIEVES,
+            new int[][]{
+                    {22681, 22699}
+            },
+            true,
+            null,
+            new LootTable().addTable(1,
+                    new LootItem(1617, 1, 1),//Uncut diamond
+                    new LootItem(1619, 1, 1),//Uncut ruby
+                    new LootItem(1621, 1, 1),//Uncut emerald
+                    new LootItem(1623, 1, 1),//Uncut sapphire
+                    new LootItem(1625, 1, 1),//Uncut opal
+                    new LootItem(1627, 1, 1),//Uncut jade
+                    new LootItem(1629, 1, 1),//Uncut red topaz
+                    new LootItem(4548, 1, 1),//Bullseye lantern
+                    new LootItem(5014, 1, 1),//Mining helmet
+                    new LootItem(10956, 1, 1),//Frog-leather chaps
+                    new LootItem(10954, 1, 1),//Frog-leather body
+                    new LootItem(2351, 1, 1),//Iron bar
+                    new LootItem(10981, 1, 1),//Cave goblin wire
+                    new LootItem(10973, 1, 1),//Light orb
+                    new LootItem(10980, 1, 1)//Empty light orb
             )),
     CHEST_BLOOD_RUNES(59, 135, 250.0, 5000, "Chest (blood runes)",
             PlayerCounter.CHEST_THIEVES,
