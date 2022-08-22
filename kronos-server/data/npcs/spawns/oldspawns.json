@@ -1,0 +1,226 @@
+[
+  {
+    "name": "Sawmill operator",
+    "id": 5422,
+    "x": 1623,
+    "y": 3500,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "a1e55885-3aa4-4d63-8a5e-5808c01f54e0"
+    }
+  },
+  {
+    "name": "Tynan",
+    "id": 6964,
+    "x": 1841,
+    "y": 3786,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "shopOptions": {
+      "trade": "a339b5c8-16be-4e82-b66e-37c15f5090ef"
+    }
+  },
+  {
+    "name": "Mage of Zamorak",
+    "id": 2581,
+    "x": 3106,
+    "y": 3559,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "shopOptions": {
+      "trade": "692511b8-9397-4f34-a546-ae89dcb7790b"
+    }
+  },
+  {
+    "name": "Battle Point Exchange",
+    "id": 1603,
+    "x": 2541,
+    "y": 4714,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "shopOptions": {
+      "trade": "4080fd7d-e876-4780-af90-5a5c2270fbaf"
+    }
+  },
+  {
+    "name": "TzHaar-Mej-Roh",
+    "id": 2185,
+    "x": 2461,
+    "y": 5125,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "shopOptions": {
+      "trade": "35b90463-33c1-42e6-a1c5-14ba417e3248"
+    }
+  },
+  {
+    "name": "TzHaar-Hur-Lek",
+    "id": 2184,
+    "x": 2464,
+    "y": 5149,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "shopOptions": {
+      "trade": "5e31b723-6faf-4f79-bb5d-b8967e35c073"
+    }
+  },
+  {
+    "name": "TzHaar-Hur-Tel",
+    "id": 2183,
+    "x": 2477,
+    "y": 5146,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "shopOptions": {
+      "trade": "7aacc988-30ae-44e7-b5a7-a685c79db41d"
+    }
+  },
+  {
+    "name": "Elkoy",
+    "id": 4968,
+    "x": 2502,
+    "y": 3193,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Grace",
+    "id": 5919,
+    "x": 3050,
+    "y": 4962,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 1,
+    "shopOptions": {
+      "trade": "130e716b-eb95-479b-ab1e-2a3dbdc52c6f"
+    }
+  },
+  {
+    "name": "Trader Stan",
+    "id": 1328,
+    "x": 3036,
+    "y": 3193,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "shopOptions": {
+      "trade": "383d749f-1f3e-46d1-87b2-206d6942cff8"
+    }
+  },
+  {
+    "name": "Void Knight",
+    "id": 1755,
+    "x": 2659,
+    "y": 2649,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "shopOptions": {
+      "Exchange": "c0d4952f-03c0-4dd7-a836-1c6592cfef2e"
+    }
+  },
+  {
+    "name": "TzHaar-Hur-Rin",
+    "id": 7689,
+    "x": 2523,
+    "y": 5074,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 3,
+    "shopOptions": {
+      "trade": "e9637286-b832-448b-a83b-3c98e19da307"
+    }
+  },
+  {
+    "name": "TzHaar-Hur-Zal",
+    "id": 7688,
+    "x": 2490,
+    "y": 5071,
+    "z": 0,
+    "direction": "N",
+    "walkRange": 3,
+    "shopOptions": {
+      "trade": "01b031a3-1d69-4e16-92d2-51ad05f4366f"
+    }
+  },
+  {
+    "name": "Prospector Percy",
+    "id": 6562,
+    "x": 3756,
+    "y": 5666,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "shopOptions": {
+      "trade": "86f281c3-93e2-42d4-8929-15e3244baada"
+    }
+  },
+  {
+    "name": "Roachey",
+    "id": 8684,
+    "x": 2596,
+    "y": 3401,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "shopOptions": {
+      "trade": "4ea4cb73-305a-445c-a7ab-131a90a1d8b5"
+    }
+  },
+  {
+    "name": "Arnold Lydspor",
+    "id": 4293,
+    "x": 2329,
+    "y": 3689,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3,
+    "shopOptions": {
+      "trade": "87417294-907b-4634-8aa6-79891e27ba11"
+    }
+  },
+  {
+    "name": "Garden supplier",
+    "id": 5423,
+    "x": 3012,
+    "y": 3373,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5,
+    "shopOptions": {
+      "trade": "4f3719df-ccf7-4014-897b-ad59c24dcb13"
+    }
+  },
+  {
+    "name": "Belona",
+    "id": 7719,
+    "x": 3017,
+    "y": 9720,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "shopOptions": {
+      "trade": "6ff99a2d-5a00-411c-8c04-664b14fe545f"
+    }
+  },
+  {
+    "name": "Vanessa",
+    "id": 502,
+    "x": 2820,
+    "y": 3461,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "25a27451-f6f4-4d6d-972c-de717e78df99"
+    }
+  }]
