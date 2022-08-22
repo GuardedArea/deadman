@@ -6,6 +6,7 @@ import io.ruin.Server;
 import io.ruin.api.protocol.world.WorldType;
 import io.ruin.api.utils.ArrayUtils;
 import io.ruin.api.utils.JsonUtils;
+import io.ruin.cache.NPCDef;
 import io.ruin.data.DataFile;
 import io.ruin.model.World;
 import io.ruin.model.entity.npc.NPC;
@@ -39,25 +40,28 @@ public class npc_spawns extends DataFile {
 
         if (!Server.dataOnlyMode) {
             spawns.forEach(spawn -> {
+                if (spawn == null) return;
                 if (spawn.world != null && spawn.world != World.type) return;
                 if (spawn.walkRange == 0) Tile.get(spawn.x, spawn.y, spawn.z, true).flagUnmovable();
-                NPC n = new NPC(spawn.id).spawn(spawn.x, spawn.y, spawn.z, Direction.get(spawn.direction), spawn.walkRange);
-                n.defaultSpawn = true;
-                spawn.name = n.getDef().name;
-                if(spawn.shopOptions != null && n.getDef().options != null){
-                    spawn.shopOptions.forEach((rightClickOption, shopUUID) -> {
-                        int indexOfValue = ArrayUtils.indexOfIgnoreCase(rightClickOption, n.getDef().options);
-                        //log.info("Attempting to find {} on npc {}", rightClickOption, n.getDef().options);
+                if (NPCDef.get(spawn.id) != null) {
+                    NPC n = new NPC(spawn.id).spawn(spawn.x, spawn.y, spawn.z, Direction.get(spawn.direction), spawn.walkRange);
+                    n.defaultSpawn = true;
+                    spawn.name = n.getDef().name;
+                    if (spawn.shopOptions != null && n.getDef().options != null) {
+                        spawn.shopOptions.forEach((rightClickOption, shopUUID) -> {
+                            int indexOfValue = ArrayUtils.indexOfIgnoreCase(rightClickOption, n.getDef().options);
+                            //log.info("Attempting to find {} on npc {}", rightClickOption, n.getDef().options);
 
-                        if(indexOfValue >= 0){
-                            if(n.actions == null)
-                                n.actions = new NPCAction[n.getDef().options.length];
-                            //log.info("Found option at index {}", indexOfValue);
-                            n.actions[indexOfValue] = ((player, npc) -> {
-                               ShopManager.openIfExists(player, shopUUID);
-                            });
-                        }
-                    });
+                            if (indexOfValue >= 0) {
+                                if (n.actions == null)
+                                    n.actions = new NPCAction[n.getDef().options.length];
+                                //log.info("Found option at index {}", indexOfValue);
+                                n.actions[indexOfValue] = ((player, npc) -> {
+                                    ShopManager.openIfExists(player, shopUUID);
+                                });
+                            }
+                        });
+                    }
                 }
             });
         }
@@ -69,14 +73,22 @@ public class npc_spawns extends DataFile {
     public int priority() {
         return 15;
     }
+
     public static final class Spawn {
-        @Expose public String name;
-        @Expose public int id;
-        @Expose public int x, y, z;
-        @Expose public String direction = "S";
-        @Expose public int walkRange;
-        @Expose public WorldType world;
-        @Expose public Map<String, String> shopOptions;
+        @Expose
+        public String name;
+        @Expose
+        public int id;
+        @Expose
+        public int x, y, z;
+        @Expose
+        public String direction = "S";
+        @Expose
+        public int walkRange;
+        @Expose
+        public WorldType world;
+        @Expose
+        public Map<String, String> shopOptions;
     }
 
 }
