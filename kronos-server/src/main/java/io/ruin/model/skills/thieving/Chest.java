@@ -109,10 +109,51 @@ public enum Chest {
             },
             false,
             null,
-            new LootTable().addTable(1,
-                    new LootItem(995, Random.get(20, 260), 1)//COINS, TODO: Add entire loottable from https://oldschool.runescape.wiki/w/Stone_chest
-            ).addTable(1,
-                    new LootItem(360, 1, 1)));
+            new LootTable().addTable(1,//~10/300 chance to hit bolt tip table
+                    new LootItem(9187, Random.get(4, 12), 1),//Jade bolt tips
+                    new LootItem(9189, Random.get(4, 12), 1),//Sapphire bolt tips
+                    new LootItem(46, Random.get(4, 12), 3),//Pearl bolt tips
+                    new LootItem(9190, Random.get(4, 12), 2),//Emerald bolt tips
+                    new LootItem(45, Random.get(4, 12), 3),//Opal bolt tips
+                    new LootItem(9191, Random.get(4, 12), 2),//Ruby bolt tips
+                    new LootItem(9192, Random.get(4, 12), 3),//Diamond bolt tips
+                    new LootItem(9188, Random.get(4, 12), 1),//Topaz bolt tips
+                    new LootItem(9193, Random.get(4, 12), 2),//Dragonstone bolt tips
+                    new LootItem(9194, Random.get(4, 12), 1) //Onyx bolt tips 19/555 chance at tips
+            ).addTable(1,//~15/300 chance to hit seed table
+                    new LootItem(5100, 1, 137),
+                    new LootItem(5323, 1, 131),
+                    new LootItem(5292, 1, 125),
+                    new LootItem(5104, 1, 92),
+                    new LootItem(5293, 1, 85),
+                    new LootItem(5311, 1, 83),
+                    new LootItem(5321, 1, 63),
+                    new LootItem(5294, 1, 56),
+                    new LootItem(22879, 1, 40),
+                    new LootItem(5295, 1, 39),
+                    new LootItem(5105, 1, 34),//Whiteberry
+                    new LootItem(5282, 1, 29),
+                    new LootItem(5296, 1, 27),
+                    new LootItem(5281, 1, 18),
+                    new LootItem(5297, 1, 18),
+                    new LootItem(5106, 1, 13),
+                    new LootItem(5298, 1, 12),
+                    new LootItem(5280, 1, 12),
+                    new LootItem(5299, 1, 10),
+                    new LootItem(22873, 1, 9),
+                    new LootItem(5300, 1, 5),
+                    new LootItem(5301, 1, 4),
+                    new LootItem(5302, 1, 3),
+                    new LootItem(5303, 1, 2),
+                    new LootItem(5304, 1, 1)
+            ).addTable(10,
+                    new LootItem(995, Random.get(20, 260), 100),
+                    new LootItem(13391, 1, 85),
+                    new LootItem(13383, 1, 66),
+                    new LootItem(1623, 1, 12),
+                    new LootItem(1619, 1, 8),
+                    new LootItem(2801, 1, 3),//TODO: Add random clue scroll instead
+                    new LootItem(13392, 1, 1)));
 
     public final int levelReq, respawnTime, petOdds;
     public final int[][] objIDs;
@@ -340,15 +381,14 @@ public enum Chest {
                 }
                 event.delay(1);
                 player.sendFilteredMessage("You fail to picklock the chest.");
-                if(Random.get(0, 8) != 8) {
-                    player.sendFilteredMessage("TPING...?");
+                if(Random.get(0, 8) == 8) {
                     player.animate(3865);
                     player.graphics(1612);
                     event.delay(1);
                     player.sendMessage("You have activated a trap on the chest.");
                     event.delay(2);
                     player.getMovement().teleport(Random.get(1307, 1310), Random.get(3676, 3682), 0);
-                    player.unlock();
+                    player.animate(-1);
                 }
             } else {
                 if (player.debug) {
