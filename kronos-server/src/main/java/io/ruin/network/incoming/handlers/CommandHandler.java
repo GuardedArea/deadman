@@ -3104,6 +3104,15 @@ public class CommandHandler implements Incoming {
                 return true;
             }
 
+            case "dumpitemlist": {
+                for(ItemDef def : ItemDef.cached.values()) {
+                    if(def != null) {
+                        System.out.println(def.id + " - " + def.name);
+                    }
+                }
+                return true;
+            }
+
             case "dumpobjs": {
                 ObjectDef[] defs = ObjectDef.LOADED.values().stream()
                         .filter(Objects::nonNull)
