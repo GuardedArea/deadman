@@ -3113,6 +3113,15 @@ public class CommandHandler implements Incoming {
                 return true;
             }
 
+            case "dumpnpclist": {
+                for(NPCDef def : NPCDef.cached.values()) {
+                    if(def != null) {
+                        System.out.println(def.id + " - " + def.name);
+                    }
+                }
+                return true;
+            }
+
             case "dumpobjs": {
                 ObjectDef[] defs = ObjectDef.LOADED.values().stream()
                         .filter(Objects::nonNull)
