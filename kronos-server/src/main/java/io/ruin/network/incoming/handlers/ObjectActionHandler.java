@@ -206,14 +206,17 @@ public class ObjectActionHandler implements Incoming {
                     System.out.println("Suggested code for unhandled object:");
                     System.out.println("");
                     System.out.println("ObjectAction.register(" + id + ", " + object.getPosition().getX() + ", " + object.getPosition().getY() + ", " + object.getPosition().getZ() + ", " + fetchMenuAction(menuAction) + ", (player, obj) -> {");
-                    switch (menuAction.toLowerCase()) {
+                    switch (menuOption.toLowerCase()) {
                         default:
+                            player.sendMessage("Interacting: " + menuOption.toLowerCase());
                             System.out.println("    player.getMovement().teleport(" + destXmin + ", " + destYmin + ", " + destZ + ");");
                             break;
                         case "climb-down":
+                            player.sendMessage("Interacting: " + menuOption.toLowerCase());
                             System.out.println("    Ladder.climb(player, " + destXmin + ", " + destYmin + ", " + destZ + ", false, true, false);");
                             break;
                         case "climb-up":
+                            player.sendMessage("Interacting: " + menuOption.toLowerCase());
                             System.out.println("    Ladder.climb(player, " + destXmin + ", " + destYmin + ", " + destZ + ", true, true, false);");
                             break;
                     }
