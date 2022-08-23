@@ -37,27 +37,29 @@ public class Ladder {
 
     static {
         ObjectDef.forEach(def -> {
-            if (def.name.equalsIgnoreCase("ladder") && def.defaultActions == null || def.name.equalsIgnoreCase("staircase") && def.defaultActions == null) {
+            boolean isLadder = def.name.equalsIgnoreCase("ladder");
+            //Climbing will only get animated if its a ladder
+            if (isLadder && def.defaultActions == null || def.name.equalsIgnoreCase("staircase") && def.defaultActions == null) {
                 /**
                  * Climb up
                  */
                 ObjectAction.register(def.id, "climb-up", (p, obj) -> {
-                    climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() + 1, true, true, true);
+                    climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() + 1, true, isLadder, true);
                 });
                 /**
                  * Climb down
                  */
                 ObjectAction.register(def.id, "climb-down", (p, obj) -> {
-                    climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() - 1, false, true, true);
+                    climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() - 1, false, isLadder, true);
                 });
                 /**
                  * Climb
                  */
                 ObjectAction.register(def.id, "climb", (p, obj) -> {
                     p.dialogue(
-                            new OptionsDialogue("Climb up or down the " + def.name + "?",
-                                    new Option("Climb Up.", () -> climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() + 1, true, true, true)),
-                                    new Option("Climb Down.", () -> climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() - 1, false, true, true))
+                            new OptionsDialogue("Climb up or down the " + def.name.toLowerCase() + "?",
+                                    new Option("Climb Up.", () -> climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() + 1, true, isLadder, true)),
+                                    new Option("Climb Down.", () -> climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() - 1, false, isLadder, true))
                             ));
                 });
             }
