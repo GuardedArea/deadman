@@ -82,7 +82,7 @@ public class World extends EventWorker {
 
     public static final int spawnableOffset = 100000;
 
-    public static final Position HOME = Position.of(2028, 3577, 0);
+    public static final Position HOME = Position.of(3222, 3222, 0);
     public static final Position EDGEHOME = Position.of(3085, 3492, 0);
 
     /**

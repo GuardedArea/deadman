@@ -37,7 +37,7 @@ public class Ladder {
 
     static {
         ObjectDef.forEach(def -> {
-            if (def.name.equalsIgnoreCase("ladder") && def.defaultActions == null) {
+            if (def.name.equalsIgnoreCase("ladder") && def.defaultActions == null || def.name.equalsIgnoreCase("staircase") && def.defaultActions == null) {
                 /**
                  * Climb up
                  */
@@ -55,7 +55,7 @@ public class Ladder {
                  */
                 ObjectAction.register(def.id, "climb", (p, obj) -> {
                     p.dialogue(
-                            new OptionsDialogue("Climb up or down the ladder?",
+                            new OptionsDialogue("Climb up or down the " + def.name + "?",
                                     new Option("Climb Up.", () -> climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() + 1, true, true, true)),
                                     new Option("Climb Down.", () -> climb(p, p.getAbsX(), p.getAbsY(), p.getHeight() - 1, false, true, true))
                             ));
