@@ -364,6 +364,7 @@ public class TeleportInterface {
     }
 
     static {
+        /*
         InterfaceHandler.register(Interface.TELEPORTS, (interfaceHandler -> {
             for (int component = 35; component < 41; component++) {
                 int finalComponent = component;
@@ -377,6 +378,7 @@ public class TeleportInterface {
         }));
         ObjectAction.register(ObjectID.KRONOS_TELEPORTER, "teleport", (player, object) -> player.getTeleports().sendInterface());
         ObjectAction.register(ObjectID.KRONOS_TELEPORTER, "previous teleport", (player, object) -> player.getTeleports().teleportPrevious());
+         */
     }
 
 }

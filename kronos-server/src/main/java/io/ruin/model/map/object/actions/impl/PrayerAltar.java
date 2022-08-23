@@ -60,7 +60,6 @@ public class PrayerAltar {
         });
         /**
          * Custom Edgeville altar
-         */
         final int[] ALTARS = new int[] { 18258, 31858, 33524, 50001};
         for(int altar : ALTARS){
             ObjectAction.register(altar, actions -> {
@@ -75,9 +74,7 @@ public class PrayerAltar {
                 );
             });
         }
-        /**
          * Bones on our home location altar
-         */
         for(Bone bone : Bone.values()) {
             SkillItem item = new SkillItem(bone.id).addAction((player, amount, event) -> {
                 while(amount-- > 0) {
@@ -108,6 +105,7 @@ public class PrayerAltar {
                 bonesOnAltar(player, boneItem, bone);
             });
         }
+         */
     }
 
 }

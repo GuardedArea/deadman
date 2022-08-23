@@ -182,26 +182,6 @@ public class IKOD {
                     loseItems.add(item);
                     continue;
                 }
-                /* corrupted staff */
-                if (item.getId() == CorruptedStaff.CHARGED) {
-                    int essenceAmt = AttributeExtensions.getCharges(item);
-                    if (essenceAmt > 0)
-                        loseItems.add(new Item(CorruptedStaff.ESSENCE, essenceAmt));
-                    item.setId(CorruptedStaff.UNCHARGED);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
-                /* corrupted staff */
-                if (item.getId() == CorruptedJavelin.CHARGED) {
-                    int essenceAmt = AttributeExtensions.getCharges(item);
-                    if (essenceAmt > 0)
-                        loseItems.add(new Item(CorruptedJavelin.ESSENCE, essenceAmt));
-                    item.setId(CorruptedJavelin.UNCHARGED);
-                    AttributeExtensions.setCharges(item, 0);
-                    loseItems.add(item);
-                    continue;
-                }
                 /* craw's bow */
                 if (item.getId() == 22550) {
                     int etherAmount = AttributeExtensions.getCharges(item);

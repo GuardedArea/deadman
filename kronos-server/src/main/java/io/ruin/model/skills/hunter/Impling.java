@@ -224,13 +224,14 @@ public enum Impling {
             new Position(3087, 3485, 0),
             new Position(3126, 3498, 0),
 
+            /*
             new Position(2032, 3591, 0), //home spawns
             new Position(2030, 3551, 0),
             new Position(2001, 3571, 0),
             new Position(2064, 3586, 0),
             new Position(2076, 3569, 0),
             new Position(2068, 3621, 0),
-
+            */
 
 
             new Position(3170, 3454, 0), // varrock spawns

@@ -110,14 +110,6 @@ public class Consumable {
             if(eatAngler(player, item))
                 player.sendFilteredMessage("You eat the anglerfish.");
         });
-
-        ItemAction.registerInventory(30089, "eat", (player, item) -> {
-            if(eatAngler(player, item)) {
-                player.sendFilteredMessage("You eat the molten eel.");
-                player.antifireTicks = 600;
-                player.getPacketSender().sendWidget(Widget.ANTIFIRE, (int) (600 * 0.6));
-            }
-        });
     }
 
     private static void registerEat(int id, int heal, String name) {

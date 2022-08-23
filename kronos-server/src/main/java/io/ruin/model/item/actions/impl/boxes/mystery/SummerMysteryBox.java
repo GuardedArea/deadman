@@ -100,14 +100,14 @@ public class SummerMysteryBox {
             new LootItem(10352, 1, 1).broadcast(Broadcast.GLOBAL), // 3rd age kiteshield
 
             //Exclusives
-            new LootItem(30194, 1, 3).broadcast(Broadcast.GLOBAL), //kronos minion
-            new LootItem(30172, 1, 3).broadcast(Broadcast.GLOBAL), //tbow limited
-            new LootItem(30169, 1, 3).broadcast(Broadcast.GLOBAL), //kodai limited
-            new LootItem(30166, 1, 3).broadcast(Broadcast.GLOBAL), //Ancest bot Limited
-            new LootItem(30163, 1, 3).broadcast(Broadcast.GLOBAL), //Ancest top Limited
-            new LootItem(30160, 1, 3).broadcast(Broadcast.GLOBAL), //Ancest hat Limited
-            new LootItem(20997, 1, 1).broadcast(Broadcast.GLOBAL), //tbow
-            new LootItem(30185, 1, 3, 1).broadcast(Broadcast.GLOBAL), //summer mbox
+            //new LootItem(30194, 1, 3).broadcast(Broadcast.GLOBAL), //kronos minion
+            //new LootItem(30172, 1, 3).broadcast(Broadcast.GLOBAL), //tbow limited
+            //new LootItem(30169, 1, 3).broadcast(Broadcast.GLOBAL), //kodai limited
+            //new LootItem(30166, 1, 3).broadcast(Broadcast.GLOBAL), //Ancest bot Limited
+            //new LootItem(30163, 1, 3).broadcast(Broadcast.GLOBAL), //Ancest top Limited
+            //new LootItem(30160, 1, 3).broadcast(Broadcast.GLOBAL), //Ancest hat Limited
+            //new LootItem(20997, 1, 1).broadcast(Broadcast.GLOBAL), //tbow
+            //new LootItem(30185, 1, 3, 1).broadcast(Broadcast.GLOBAL), //summer mbox
             new LootItem(12817, 3, 1).broadcast(Broadcast.GLOBAL) //elysian
 
     );
@@ -190,6 +190,6 @@ public class SummerMysteryBox {
     }
 
     static {
-        ItemAction.registerInventory(SUMMER_MYSTERY_BOX, "open", SummerMysteryBox::open);
+        //ItemAction.registerInventory(SUMMER_MYSTERY_BOX, "open", SummerMysteryBox::open);
     }
 }

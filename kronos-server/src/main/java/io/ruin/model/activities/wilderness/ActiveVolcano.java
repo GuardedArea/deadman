@@ -26,7 +26,7 @@ import static io.ruin.cache.ItemID.BLOOD_FRAGMENT;
 
 public class ActiveVolcano {
 
-    private static boolean DISABLED = false;
+    private static boolean DISABLED = true;
 
     private static long spawnTicks = 0;
     private static final int BOULDER = 31037;

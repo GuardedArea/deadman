@@ -26,7 +26,9 @@ public class TabAccountManagement {
         /**
          * Send the interface when our player logs in
          */
-        LoginListener.register(player -> player.getPacketSender().sendAccountManagement(getDonatorRank(player), getUsername(player), player.getUnreadPMs()));
+        //LoginListener.register(player -> player.getPacketSender().sendAccountManagement(getDonatorRank(player), getUsername(player), player.getUnreadPMs()));
+
+        LoginListener.register(TabAccountManagement::restore);
 
         /**
          * Interface buttons
@@ -99,6 +101,22 @@ public class TabAccountManagement {
         } else {
             return "Unranked";
         }
+    }
+
+
+    public static void swap(Player player, int interfaceId) {
+        if (player.isFixedScreen())
+            player.getPacketSender().sendInterface(interfaceId, 548, 74, 1);
+        else if (player.getGameFrameId() == 164)
+            player.getPacketSender().sendInterface(interfaceId, 164, 76, 1);
+        else
+            player.getPacketSender().sendInterface(interfaceId, 161, 76, 1);
+    }
+
+    public static void restore(Player player) {
+        swap(player, Interface.ACCOUNT_MANAGEMENT);
+        //TabQuest.send(player);
+        //player.journal.send(player);
     }
 
 }

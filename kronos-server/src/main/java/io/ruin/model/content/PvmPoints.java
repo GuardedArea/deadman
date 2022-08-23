@@ -1,7 +1,6 @@
 package io.ruin.model.content;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.activities.summerevent.SummerShrine;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 

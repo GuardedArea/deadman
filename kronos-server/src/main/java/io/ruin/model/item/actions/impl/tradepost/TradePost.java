@@ -456,6 +456,8 @@ public class TradePost {
     }
 
     static {
+        /*
+        TODO: Add trading post interfaces to new revision if we want this working again
         InterfaceHandler.register(MY_OFFERS_INVENTORY_WIDGET, handler -> {
             handler.actions[0] = new InterfaceAction() {
                 public void handleClick(Player player, int option, int slot, int itemId) {
@@ -507,6 +509,8 @@ public class TradePost {
                 };
             }
         });
+
+         */
     }
 
 }

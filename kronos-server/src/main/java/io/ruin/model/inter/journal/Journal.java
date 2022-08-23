@@ -71,21 +71,26 @@ public enum Journal {
      * Sending
      */
     public void send(Player player) {
-        player.journal = this;
-        TabJournal.swap(player, Interface.SERVER_TAB);
-        if(this == BESTIARY && player.bestiarySearchResults != null) {
-            for(int childId = 9; childId <= 47; childId++) {
-                player.getPacketSender().sendClientScript(135, "ii", Interface.SERVER_TAB << 16 | childId, 494);
-                player.getPacketSender().sendString(Interface.SERVER_TAB, childId, "");
-            }
-            for(JournalEntry entry : player.bestiarySearchResults)
-                entry.send(player);
-        } else {
-            player.bestiarySearchResults = null;
-            for(JournalEntry entry : entries) {
-                entry.send(player);
-            }
+        boolean disabled = true;
+        if(disabled) {
+            player.sendMessage("Journal disabled due to cache upgrade");
+            return;
         }
+        //player.journal = this;
+        //TabJournal.swap(player, Interface.SERVER_TAB);
+        //if(this == BESTIARY && player.bestiarySearchResults != null) {
+        //    for(int childId = 9; childId <= 47; childId++) {
+        //        player.getPacketSender().sendClientScript(135, "ii", Interface.SERVER_TAB << 16 | childId, 494);
+        //        player.getPacketSender().sendString(Interface.SERVER_TAB, childId, "");
+        //    }
+        //    for(JournalEntry entry : player.bestiarySearchResults)
+        //        entry.send(player);
+        //} else {
+        //    player.bestiarySearchResults = null;
+        //    for(JournalEntry entry : entries) {
+        //        entry.send(player);
+        //    }
+        //}
     }
 
     /**

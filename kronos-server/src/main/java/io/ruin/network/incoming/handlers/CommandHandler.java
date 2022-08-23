@@ -115,6 +115,7 @@ import static io.ruin.model.entity.player.GameMode.*;
 @IdHolder(ids = {17})
 public class CommandHandler implements Incoming {
 
+
     private static final Bounds EDGEVILLE = new Bounds(3036, 3478, 3144, 3524, -1);
 
     private static final Bounds MAGE_BANK = new Bounds(2527, 4708, 2551, 4727, 0);
@@ -1117,15 +1118,17 @@ public class CommandHandler implements Incoming {
                     case "nech":
                     case "nechryarch":
                     case "corrupt":
-                        boss = EventBossType.CORRUPTED_NECHRYARCH;
+                        boss = EventBossType.TEST_BOSS;
+                        //boss = EventBossType.CORRUPTED_NECHRYARCH;
                         break;
                     case "lava":
                     case "brutal":
                     case "drag":
-                        boss = EventBossType.BRUTAL_LAVA_DRAGON;
+                        boss = EventBossType.TEST_BOSS;
+                        //boss = EventBossType.BRUTAL_LAVA_DRAGON;
                         break;
                     default:
-                        boss = EventBossType.CORRUPTED_NECHRYARCH;
+                        boss = EventBossType.TEST_BOSS;
                 }
                 TimedEventManager.INSTANCE.setEvent(new EventBoss(boss));
                 return true;
@@ -1785,6 +1788,11 @@ public class CommandHandler implements Incoming {
             case "rune": {
                 Rune r = Rune.valueOf(args[0].toUpperCase());
                 player.getInventory().add(r.getId(), Integer.MAX_VALUE);
+                return true;
+            }
+
+            case "interadv": {
+                player.getPacketSender().sendInterface(Interface.ACCOUNT_MANAGEMENT, 548, Integer.parseInt(args[0]), 1);
                 return true;
             }
 

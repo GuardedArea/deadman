@@ -34,8 +34,7 @@ public class Lever {
         ObjectAction.register(1814, 2561, 3311, 0, "pull", (player, obj) -> pull(player, obj, 3154, 3924, "...and teleport into the wilderness."));
 
         /*
-         * Edge
-         */
+         * Edge TODO: Fix edge lever, this code is from the old relocated one
         ObjectAction.register(26761, 3090, 3475, 0, "pull", (player, obj) -> {
             if (player.edgevilleLeverWarning) {
                 player.dialogue(
@@ -53,6 +52,7 @@ public class Lever {
             }
         });
 
+         */
         /*
          * Deserted
          */

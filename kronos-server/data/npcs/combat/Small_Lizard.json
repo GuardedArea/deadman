@@ -10,7 +10,7 @@
     //Slayer Info
     "slayer_level": 22,
     "slayer_xp": 15.0,
-    "slayer_tasks": [ "Desert Lizards" ],
+    "slayer_tasks": [ "Lizards" ],
     //Combat Stats
     "attack": 10,
     "strength": 10,

@@ -61,7 +61,7 @@ public class Mac {
         List<ShopItem> capes200m = Stream.of(types)
                 .map(statType -> {
                     ShopItem cape200m = ShopItem.builder()
-                            .id(statType.masterCapeId)
+                            .id(statType.trimmedCapeId)//Kept the code incase we want to add 120/200m capes
                             .additionalItems(Arrays.asList(new Item(statType.hoodId, 1)))
                             .amount(100)
                             .price(200000)

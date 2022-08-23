@@ -175,6 +175,7 @@ public class TabQuest {
     }
 
     static {
+        /*
         InterfaceHandler.register(Interface.NOTICEBOARD, (h) -> {
             for (NoticeboardComponent component : NoticeboardComponent.values()) {
                 h.actions[component.getComponentId()] = component.getAction();
@@ -189,6 +190,8 @@ public class TabQuest {
                 }
             });
         });
+
+         */
     }
 
     private interface TextField {

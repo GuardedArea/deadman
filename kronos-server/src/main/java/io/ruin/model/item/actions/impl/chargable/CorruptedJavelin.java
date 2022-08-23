@@ -21,7 +21,7 @@ import io.ruin.model.item.attributes.AttributeTypes;
  * @project Kronos
  */
 public class CorruptedJavelin {
-
+    /*
     public static final int UNCHARGED = 30009;
     public static final int CHARGED = 30012;
     public static final int ESSENCE = 30013;
@@ -79,5 +79,5 @@ public class CorruptedJavelin {
             javelin.setId(UNCHARGED);
         }));
     }
-
+*/
 }

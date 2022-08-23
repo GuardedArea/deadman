@@ -19,7 +19,7 @@ import io.ruin.model.item.attributes.AttributeTypes;
  * @project Kronos
  */
 public class CorruptedStaff {
-
+    /*
     public static final int UNCHARGED = 30023;
     public static final int CHARGED = 30032;
     public static final int ESSENCE = 30013;
@@ -89,5 +89,5 @@ public class CorruptedStaff {
             javelin.setId(UNCHARGED);
         }));
     }
-
+*/
 }

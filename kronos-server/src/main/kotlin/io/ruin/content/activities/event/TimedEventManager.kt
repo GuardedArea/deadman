@@ -43,6 +43,7 @@ object TimedEventManager {
     init {
         val delay = TimeUnit.HOURS.toMillis(1);
         fixedRateTimer("Event-Boss-Timer", false, delay, delay) {
+            System.out.println("fixedRateTimer Event-Boss-Timer")
             var boss = Random.get(EventBossType.values())
             boss?.let { event = EventBoss(boss) }
         }

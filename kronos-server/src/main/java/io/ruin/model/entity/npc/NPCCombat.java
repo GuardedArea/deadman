@@ -7,7 +7,6 @@ import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.World;
 import io.ruin.model.achievements.listeners.experienced.DemonSlayer;
-import io.ruin.model.activities.summerevent.SummerTokens;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.*;
@@ -342,45 +341,49 @@ public abstract class NPCCombat extends Combat {
         /*
          * Gives players PVM Points
          */
-        PvmPoints.addPoints(pKiller, npc);
+        //TODO: Make this a toggle instead of commenting it out
+        // PvmPoints.addPoints(pKiller, npc);
         /*
          * Casket loots
          */
-        GoldCasket.drop(pKiller, npc, dropPosition);
-        /*
-         * Summer Loot
-         */
-        SummerTokens.npcKill(pKiller, npc, dropPosition);
+        //TODO: Make this a toggle instead of commenting it out
+        //GoldCasket.drop(pKiller, npc, dropPosition);
         /*
          * Catacombs loot
          */
-        KourendCatacombs.drop(pKiller, npc, dropPosition);
+        //TODO: Make this a toggle instead of commenting it out
+        //KourendCatacombs.drop(pKiller, npc, dropPosition);
 
         /*
          * Roll for OSRS wilderness key
          */
-        if(World.wildernessKeyEvent)
-            WildernessKey.rollForWildernessBossKill(pKiller, npc);
+        //TODO: Make this a toggle instead of commenting it out
+        //if(World.wildernessKeyEvent)
+        //    WildernessKey.rollForWildernessBossKill(pKiller, npc);
 
         /*
          * PvP Item loots
          */
-        Wilderness.rollPvPItemDrop(pKiller, npc, dropPosition);
+        //TODO: Make this a toggle instead of commenting it out
+        //Wilderness.rollPvPItemDrop(pKiller, npc, dropPosition);
 
         /*
          * Roll for wilderness clue key
          */
-        Wilderness.rollClueKeyDrop(pKiller, npc, dropPosition);
+        //TODO: Make this a toggle instead of commenting it out
+        //Wilderness.rollClueKeyDrop(pKiller, npc, dropPosition);
 
         /*
          * Blood Money
          */
-        Wilderness.bloodMoneyDrop(pKiller, npc);
+        //TODO: Make this a toggle instead of commenting it out
+        //Wilderness.bloodMoneyDrop(pKiller, npc);
 
         /*
          * Resource packs
          */
-        Wilderness.resourcePackWithBoss(pKiller, npc);
+        //TODO: Make this a toggle instead of commenting it out
+        //Wilderness.resourcePackWithBoss(pKiller, npc);
 
     }
 

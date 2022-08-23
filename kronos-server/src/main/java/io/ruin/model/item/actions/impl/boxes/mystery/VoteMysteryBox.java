@@ -178,6 +178,7 @@ public class VoteMysteryBox {
     private static final int MAX_VIEW_OFFERS = 50;
 
     static {
+        /*
         ItemAction.registerInventory(6829, "open", VoteMysteryBox::open);
 
         InterfaceHandler.register(VIEW_REWARDS_WIDGET, h -> {
@@ -185,6 +186,7 @@ public class VoteMysteryBox {
             h.actions[100] = (SimpleAction) SuperMysteryBox::openRewards;
             h.actions[412] = (SimpleAction) SummerMysteryBox::openRewards;
         });
+         */
     }
 
     static void updateRewards(Player player, LootTable rewardsTable) {

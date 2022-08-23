@@ -75,7 +75,7 @@ public enum Broadcast {
 
     public void sendNews(Player player, Icon overrideIcon, String title, String message) {
         //Player only required to be set when this == FRIENDS.
-      consumer.accept(player, (overrideIcon == null ? newsIcon.tag() : overrideIcon.tag()) + "<col=f4d03f> " +
+      consumer.accept(player, (overrideIcon == null ? newsIcon.tag() : overrideIcon.tag()) + "<col=ff0000> " +
              (title == null ? "" : title + ":") + " <col=1e44b3>" + message);
     }
 

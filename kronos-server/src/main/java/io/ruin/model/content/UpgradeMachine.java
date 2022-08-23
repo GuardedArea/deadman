@@ -270,6 +270,7 @@ public class UpgradeMachine {
     }
 
     static {
+/*
         ObjectAction.register(ObjectID.UPGRADE_MACHINE, "Upgrade", (player, object) -> player.getUpgradeMachine().sendInterface());
         ItemObjectAction.register(ObjectID.UPGRADE_MACHINE, ((player, item, obj) -> player.getUpgradeMachine().scrap(item)));
         InterfaceHandler.register(Interface.UPGRADE_MACHINE, interfaceHandler -> {
@@ -303,36 +304,37 @@ public class UpgradeMachine {
                 if (reclaim) {
                     boolean hasSpace = player.getInventory().hasFreeSlots(DwarfCannon.CANNON_PARTS.length);
                     player.dialogue(
-                        new PlayerDialogue("I've lost my cannon, can i have another one?"),
-                        !hasSpace ? new NPCDialogue(npc, "Come back when you at least 4 inventory spaces.") : new NPCDialogue(npc, "Yeah sure, here you go. Try not to do it again."),
-                        !hasSpace ? new MessageDialogue("You need at least 4 inventory spaces to claim your cannon back.") : new ItemDialogue().one(DwarfCannon.BARRELS, "The Drunken dwarf gives you another cannon.").action(() -> {
-                            IntStream.of(DwarfCannon.CANNON_PARTS).forEach(player.getInventory()::add);
-                            World.removeCannonReclaim(player.getUserId());
-                        })
+                            new PlayerDialogue("I've lost my cannon, can i have another one?"),
+                            !hasSpace ? new NPCDialogue(npc, "Come back when you at least 4 inventory spaces.") : new NPCDialogue(npc, "Yeah sure, here you go. Try not to do it again."),
+                            !hasSpace ? new MessageDialogue("You need at least 4 inventory spaces to claim your cannon back.") : new ItemDialogue().one(DwarfCannon.BARRELS, "The Drunken dwarf gives you another cannon.").action(() -> {
+                                IntStream.of(DwarfCannon.CANNON_PARTS).forEach(player.getInventory()::add);
+                                World.removeCannonReclaim(player.getUserId());
+                            })
                     );
                 } else {
                     player.dialogue(
-                        new PlayerDialogue("Hello there! Are you alright?"),
-                        new NPCDialogue(npc, "Of courshe! Why why why hic* why shouldn't I be?"),
-                        new PlayerDialogue("I don't know... You look a bit drunk."),
-                        new NPCDialogue(npc, "Noooooo, hic* that's the liquor doing the talking."),
-                        new PlayerDialogue("Ok... Hey, do you know what this machine next to you does?"),
-                        new NPCDialogue(npc, "That old thing? That's jusht my hic* upgrader mashine thingy."),
-                        new NPCDialogue(npc, "It makes items do hic* unique things after they've been shoved into it."),
-                        new NPCDialogue(npc, "Sometimes you hic* can get pretty cool stuff, but for at a cost."),
-                        new PlayerDialogue("What kind of cost are we talking here?"),
-                        new NPCDialogue(npc, "Well, it takes a few coins, hic* and couple of item hic* scrap to use it."),
-                        new PlayerDialogue("That's pretty cool, how do you get item scrap?"),
-                        new NPCDialogue(npc, "All you have to do, is hic* throw any item onto the bench top, " +
-                                "and the machine will spit out scrap, though the amount depends on what item you give it."),
-                        new PlayerDialogue("What about the effects you were talking about then?"),
-                        new NPCDialogue(npc, "You can just look at the hic* bensh, put your items into it, and KABAM! You get cool hic* stuff."),
-                        new NPCDialogue(npc, "Their's also a list of effects taped onto the side of it."),
-                        new PlayerDialogue("Okay, thanks. I'll give it a try some time.")
+                            new PlayerDialogue("Hello there! Are you alright?"),
+                            new NPCDialogue(npc, "Of courshe! Why why why hic* why shouldn't I be?"),
+                            new PlayerDialogue("I don't know... You look a bit drunk."),
+                            new NPCDialogue(npc, "Noooooo, hic* that's the liquor doing the talking."),
+                            new PlayerDialogue("Ok... Hey, do you know what this machine next to you does?"),
+                            new NPCDialogue(npc, "That old thing? That's jusht my hic* upgrader mashine thingy."),
+                            new NPCDialogue(npc, "It makes items do hic* unique things after they've been shoved into it."),
+                            new NPCDialogue(npc, "Sometimes you hic* can get pretty cool stuff, but for at a cost."),
+                            new PlayerDialogue("What kind of cost are we talking here?"),
+                            new NPCDialogue(npc, "Well, it takes a few coins, hic* and couple of item hic* scrap to use it."),
+                            new PlayerDialogue("That's pretty cool, how do you get item scrap?"),
+                            new NPCDialogue(npc, "All you have to do, is hic* throw any item onto the bench top, " +
+                                    "and the machine will spit out scrap, though the amount depends on what item you give it."),
+                            new PlayerDialogue("What about the effects you were talking about then?"),
+                            new NPCDialogue(npc, "You can just look at the hic* bensh, put your items into it, and KABAM! You get cool hic* stuff."),
+                            new NPCDialogue(npc, "Their's also a list of effects taped onto the side of it."),
+                            new PlayerDialogue("Okay, thanks. I'll give it a try some time.")
                     );
                 }
             });
         });
+    */
     }
 
 }

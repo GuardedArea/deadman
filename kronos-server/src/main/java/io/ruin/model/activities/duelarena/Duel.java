@@ -889,6 +889,8 @@ public class Duel extends ItemContainer {
             h.actions[109] = (SimpleAction) p -> p.getDuel().loadSettings(false);
         });
 
+        /*
+        TODO: Calling this interface throws an OutOfBoundsException, very weird because it doesn't seem custom. Skipped it for now since staking isn't a thing on deadman anyways but def something worth looking at incase we have corrupted data in the cache... to be continued!
         InterfaceHandler.register(Interface.DUEL_ARENA_STAKE, h -> {
             h.actions[18] = (DefaultAction) (p, option, slot, itemId) -> {
                 Item item = p.getDuel().get(slot, itemId);
@@ -923,7 +925,6 @@ public class Duel extends ItemContainer {
             };
             h.actions[71] = (SimpleAction) p -> p.getDuel().close();
         });
-
         InterfaceHandler.register(Interface.DUEL_ARENA_CONFIRM, h -> {
             h.actions[78] = (SimpleAction) p -> p.getDuel().accept(false, false);
             h.actions[80] = (SimpleAction) p -> p.getDuel().close();
@@ -956,6 +957,7 @@ public class Duel extends ItemContainer {
             item.examine(p);
         });
 
+    */
         /**
          * Trapdoor
          */

@@ -81,7 +81,9 @@ public class Giveaway {
 
         //ObjectAction.register(40000, "Use", (player, obj) -> openGiveawayInterface(player));
 
-        InterfaceHandler.register(Interface.GIVEAWAY, h -> h.actions[6] = (SimpleAction) Giveaway::buyEntryOpen);
+        //Custom giveaway interface was removed in revision change... gotta add this back from old kronos cache if we want to use this for whatever reason
+
+        //InterfaceHandler.register(Interface.GIVEAWAY, h -> h.actions[6] = (SimpleAction) Giveaway::buyEntryOpen);
 
     }
 

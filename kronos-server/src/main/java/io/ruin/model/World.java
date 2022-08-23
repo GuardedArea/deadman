@@ -409,13 +409,13 @@ public class World extends EventWorker {
         Server.afterData.add(() -> {
             List<String> announcements;
             announcements = Arrays.asList(
-                    "Need help? Join the \"help\" cc!",
-                    "Make sure to vote to gain access to exclusive items!",
-                    "Looking to support Kronos? Type ::store ingame!",
-                    "Take the time to protect your account and set a bank pin and 2FA!",
-                    "Please take the time to vote for us. It helps us out and takes two seconds! ::vote",
-                    "Join ::discord to get closer to the community!",
-                    "Item Upgrades can be a great way to get the most from your gear!"
+                    "<col=3ad956>Pellentesque hendrerit vulputate dui vel vulputate.",
+                    "<col=40c50d>Curabitur nec elit pharetra, egestas neque vehicula.",
+                    "<col=374b84>Praesent nec fermentum lacus, non sodales nisi.",
+                    "<col=e8d5c6>Duis dapibus lectus non bibendum egestas.",
+                    "<col=b566fa>Maecenas sagittis, nibh eu semper imperdiet.",
+                    "<col=45bdb2>Mauris blandit rhoncus pulvinar.",
+                    "<col=e83e0d>Nunc cursus turpis a sem eleifend, ornare venenatis ex bibendum."
             );
 
             Collections.shuffle(announcements);
@@ -423,7 +423,7 @@ public class World extends EventWorker {
                 int offset = 0;
                 while(true) {
                     e.delay(500); //5 minutes
-                    Broadcast.WORLD.sendNews(Icon.ANNOUNCEMENT, "Announcements", announcements.get(offset));
+                    Broadcast.WORLD.sendNews(Icon.TEST, "BROADCAST", announcements.get(offset));
                     if(++offset >= announcements.size())
                         offset = 0;
                 }

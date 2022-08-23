@@ -1,6 +1,7 @@
 package io.ruin.cache;
 
 public enum Icon {
+    TEST(1),
     RED_INFO_BADGE(83),
     YELLOW_INFO_BADGE(84),
     MYSTERY_BOX(33),

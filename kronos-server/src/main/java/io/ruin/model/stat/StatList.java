@@ -3,7 +3,6 @@ package io.ruin.model.stat;
 import com.google.gson.annotations.Expose;
 import io.ruin.cache.Color;
 import io.ruin.model.World;
-import io.ruin.model.activities.summerevent.SummerTokens;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.content.upgrade.ItemEffect;
 import io.ruin.model.entity.player.Player;
@@ -127,7 +126,6 @@ public class StatList {
         Stat stat = stats[statId];
         double baseAmount = amount;
 
-        SummerTokens.xpDrop(player);
 
         for(Item item : player.getEquipment().getItems()) {
             if(item != null && item.getDef() != null) {

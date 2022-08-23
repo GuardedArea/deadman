@@ -111,11 +111,11 @@ public class KourendCatacombs {
             }
         });
 
-        ObjectAction.register(28892, 1706, 10077, 0, "squeeze-through", (player, obj) -> squeezeThroughCrack(player, obj, new Position(1716, 10056, 0), 34)); // crack
-        ObjectAction.register(28892, 1716, 10057, 0, "squeeze-through", (player, obj) -> squeezeThroughCrack(player, obj, new Position(1706, 10078, 0), 34)); // crack
+        //ObjectAction.register(28892, 1706, 10077, 0, "squeeze-through", (player, obj) -> squeezeThroughCrack(player, obj, new Position(1716, 10056, 0), 34)); // crack
+        //ObjectAction.register(28892, 1716, 10057, 0, "squeeze-through", (player, obj) -> squeezeThroughCrack(player, obj, new Position(1706, 10078, 0), 34)); // crack
 
-        ObjectAction.register(28892, 1646, 10001, 0, "squeeze-through", (player, obj) -> squeezeThroughCrack(player, obj, new Position(1648, 10009, 0), 25)); // crack
-        ObjectAction.register(28892, 1648, 10008, 0, "squeeze-through", (player, obj) -> squeezeThroughCrack(player, obj, new Position(1646, 10000, 0), 25)); // crack
+        //ObjectAction.register(28892, 1646, 10001, 0, "squeeze-through", (player, obj) -> squeezeThroughCrack(player, obj, new Position(1648, 10009, 0), 25)); // crack
+        //ObjectAction.register(28892, 1648, 10008, 0, "squeeze-through", (player, obj) -> squeezeThroughCrack(player, obj, new Position(1646, 10000, 0), 25)); // crack
 
     }
 

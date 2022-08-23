@@ -42,6 +42,7 @@ public class StaffOfTheDead implements Special {
     }
 
     static {
+        /*
         ItemItemAction.register(30129, 11921, (player, primary, secondary) -> {
             if (!AttributeExtensions.hasAttribute(secondary, AttributeTypes.AUGMENTED)) {
                 player.dialogue(new YesNoDialogue(Color.RED.wrap("WARNING!"), "This will consume the augment and make your staff untradeable.", primary, () -> {
@@ -62,6 +63,8 @@ public class StaffOfTheDead implements Special {
                 player.sendMessage("Your staff is already augmented.");
             }
         });
+
+         */
     }
 
 }

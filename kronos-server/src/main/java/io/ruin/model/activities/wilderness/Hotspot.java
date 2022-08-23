@@ -11,6 +11,8 @@ import io.ruin.model.map.MapListener;
 
 public class Hotspot {
 
+    private static boolean DISABLED = true;
+
     private static final Hotspot[] HOTSPOTS = {
           new Hotspot("Mage Bank", new Bounds(3070, 3905, 3132, 3974, -1)),
             /*new Hotspot("Deserted Keep", new Bounds(3144, 3911, 3177, 3968, -1)),
@@ -55,19 +57,21 @@ public class Hotspot {
      */
     static {
         int swapTicks = 20 * 100; //20 minutes
-        World.startEvent(e -> {
-            while (true) {
-                Hotspot next = Random.get(HOTSPOTS);
-                if (next == ACTIVE) {
-                    e.delay(1); //Let's not risk hogging the current thread.
-                    continue;
+        if(!DISABLED) {
+            World.startEvent(e -> {
+                while (true) {
+                    Hotspot next = Random.get(HOTSPOTS);
+                    if (next == ACTIVE) {
+                        e.delay(1); //Let's not risk hogging the current thread.
+                        continue;
+                    }
+                    ACTIVE = next;
+                    String eventMessage = next.name + " is the new hotspot! Killing players here will give double blood money for the next 20 minutes!";
+                    broadcastEvent(eventMessage);
+                    e.delay(swapTicks);
                 }
-                ACTIVE = next;
-                String eventMessage = next.name + " is the new hotspot! Killing players here will give double blood money for the next 20 minutes!";
-                broadcastEvent(eventMessage);
-                e.delay(swapTicks);
-            }
-        });
+            });
+        }
     }
 
     private static void broadcastEvent(String eventMessage) {

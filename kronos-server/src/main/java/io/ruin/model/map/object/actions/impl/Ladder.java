@@ -72,8 +72,8 @@ public class Ladder {
         //Edgeville -> Air Obelisk
         ObjectAction.register(17385, 3088, 9971, 0, "climb-up", (player, obj) -> climb(player, 3089, 3571, 0, true, true, false));
 
-        //Air Obelisk -> Edgeville
-        ObjectAction.register(16680, 3088, 3571, 0, "climb-down", (player, obj) -> climb(player, 3087, 9971, 0, false, true, false));
+        //Air Obelisk -> Edgeville TODO: Find out why this errors
+        //ObjectAction.register(16680, 3088, 3571, 0, "climb-down", (player, obj) -> climb(player, 3087, 9971, 0, false, true, false));
 
         //Camelot spinning wheel ladder
         ObjectAction.register(26118, 2715, 3472, 1, "climb-up", (player, obj) -> climb(player, 2714, 3472, 3, true, true, false));
@@ -103,8 +103,8 @@ public class Ladder {
         ObjectAction.register(16673, 2573, 3325, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2573, 3324, 0));
 
         //Home
-        ObjectAction.register(25801, 2021, 3566, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2021, 3567, 0));
-        ObjectAction.register(25935, 2020, 3565, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2021, 3567, 1));
+        //ObjectAction.register(25801, 2021, 3566, 1, "climb-down", (player, obj) -> player.getMovement().teleport(2021, 3567, 0));
+        //ObjectAction.register(25935, 2020, 3565, 0, "climb-up", (player, obj) -> player.getMovement().teleport(2021, 3567, 1));
 
         /**
          * Ladders we don't want to work!

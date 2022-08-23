@@ -49,12 +49,11 @@ public enum Burning {
     /**
      * Raids
      */
-    KINDLING(20799, 40.0, 1, 21, 200, 26185, PlayerCounter.KINDLING_BURNT),
+    KINDLING(20799, 40.0, 1, 21, 200, 26185, PlayerCounter.KINDLING_BURNT)
 
     /*
      * Custom
      */
-    CORRUPT_LOGS(30105, 450.0, 95, 99, 600, 20001, PlayerCounter.PURPLE_LOGS_BURNT),
     ;
 
 

@@ -373,10 +373,10 @@ public class FishingSpot {
                 .register(INFERNO_EEL, "bait");
         /**
          * Molten eel
-         */
         new FishingSpot(FishingTool.SMALL_FISHING_NET)
                 .regularCatches(FishingCatch.MOLTEN_EEL)
                 .register(MOLTEN_EEL, "bait");
+         */
     }
 
     private static void moveMinnow(NPC... minnows) {

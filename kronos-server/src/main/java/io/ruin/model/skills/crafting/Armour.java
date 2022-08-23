@@ -59,11 +59,7 @@ public enum Armour {
 
     //Crab armour
     CRAB_HELMET(15, ArmourType.CRAB_HELMET, 7539, "a crab helmet", 32.5, 1),
-    CRAB_CLAW(15, ArmourType.CRAB_CLAW, 7537, "a crab claw", 32.5, 1),
-
-    LAVA_COIF(92, ArmourType.LAVA_DRAGONHIDE, 30074, "a lava dragonhide coif", 774.0, 8),
-    LAVA_CHAPS(95, ArmourType.LAVA_DRAGONHIDE, 30080, "a pair of lava dragonhide chaps", 774.0, 8),
-    LAVA_BODY(99, ArmourType.LAVA_DRAGONHIDE, 30077, "a lava dragonhide body", 774.0, 8),
+    CRAB_CLAW(15, ArmourType.CRAB_CLAW, 7537, "a crab claw", 32.5, 1)
 
     ;
 
@@ -138,7 +134,6 @@ public enum Armour {
     private static final int BLUE_DRAGON_LEATHER = 2505;
     private static final int RED_DRAGON_LEATHER = 2507;
     private static final int BLACK_DRAGON_LEATHER = 2509;
-    private static final int LAVA_DRAGON_LEATHER = 30083;
 
     private static final int SNAKESKIN = 6289;
     private static final int YAK_HIDE = 10818;
@@ -236,12 +231,6 @@ public enum Armour {
         ItemItemAction.register(NEEDLE, FRESH_CRAB_CLAW, (player, needle, freshCrabClaw) -> SkillDialogue.make(player,
                 new SkillItem(CRAB_CLAW.cutID).addAction((p, amount, event) -> craft(p, CRAB_CLAW, amount))));
 
-        /**
-         * Lava dragon hide
-         */
-        ItemItemAction.register(NEEDLE, LAVA_DRAGON_LEATHER, (player, needle, blackDragonLeather) -> SkillDialogue.make(player,
-                new SkillItem(LAVA_COIF.cutID).addAction((p, amount, event) -> craft(p, LAVA_COIF, amount)),
-                new SkillItem(LAVA_CHAPS.cutID).addAction((p, amount, event) -> craft(p, LAVA_CHAPS, amount)),
-                new SkillItem(LAVA_BODY.cutID).addAction((p, amount, event) -> craft(p, LAVA_BODY, amount))));
+
     }
 }
