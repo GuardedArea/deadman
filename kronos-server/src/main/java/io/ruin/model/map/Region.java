@@ -161,6 +161,9 @@ public class Region {
                 return null;
             tiles = new Tile[4][64][64];
         }
+        if(z > 3) {
+            z = 3;
+        }
         Tile tile = tiles[z][localX][localY];
         if(tile == null && create)
             tile = tiles[z][localX][localY] = new Tile(this);
