@@ -61,6 +61,7 @@ public class DonatorBossPortal {
     }
 
     static {
-        ObjectAction.register(BOSS_ENTRANCE, 1, (player, obj) -> player.getMovement().teleport(2425, 9531, 0));
+        //smh...
+        //ObjectAction.register(BOSS_ENTRANCE, 1, (player, obj) -> player.getMovement().teleport(2425, 9531, 0));
     }
 }

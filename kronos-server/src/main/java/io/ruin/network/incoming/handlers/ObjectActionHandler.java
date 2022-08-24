@@ -274,6 +274,8 @@ public class ObjectActionHandler implements Incoming {
                 return 1;
             case "GAME_OBJECT_FIRST_OPTION":
                 return 1;
+            case "GAME_OBJECT_SECOND_OPTION":
+                return 2;
         }
     }
 

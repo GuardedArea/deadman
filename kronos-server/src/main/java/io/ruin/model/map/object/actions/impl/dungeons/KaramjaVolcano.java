@@ -8,6 +8,9 @@ import io.ruin.model.map.object.actions.impl.Ladder;
 public class KaramjaVolcano { // Elvarg entrance is handled in Elvarg class
 
     static {
+        ObjectAction.register(11441, 2856, 3168, 0, 1, (player, obj) -> {
+            Ladder.climb(player, 2856, 9570, 0, false, true, false);
+        });
         ObjectAction.register(18969, "climb", (player, obj) -> player.getMovement().teleport(2856, 3170, 0));
         ObjectAction.register(11441, "climb", (player, obj) -> Ladder.climb(player, 2856, 9570, 0, false, true, false));
         ObjectAction.register(2606, "open", (player, obj) -> {
