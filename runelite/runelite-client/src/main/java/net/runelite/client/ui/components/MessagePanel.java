@@ -50,7 +50,7 @@ public class MessagePanel extends JPanel
 	private static final Dimension BAR_SIZE = new Dimension(PANEL_SIZE.width, 30);
 	private static final int MESSAGE_AREA_PADDING = 15;
 
-	private final JLabel titleLabel = new JLabel("Welcome to Kronos");
+	private final JLabel titleLabel = new JLabel("Welcome to Deadman mode");
 	private final JLabel messageArea;
 	private final JLabel barLabel = new JLabel("Doing something important");
 	private final JProgressBar bar = new JProgressBar(0, 100);
@@ -80,7 +80,7 @@ public class MessagePanel extends JPanel
 		c.gridy++;
 
 		// alternate message action
-		messageArea = new JLabel("<html><div style='text-align:center;'>Welcome to Kronos!</div></html>")
+		messageArea = new JLabel("<html><div style='text-align:center;'>Deadman mode is a new intense, player-vs-player survival game mode for Old School RuneScape. Deadman Mode is the ultimate in risk vs reward PvP. All members can use their existing account to play on the Deadman servers and compete in the hiscores to see who can survive this unique way of playing Old school Runescape.</div></html>")
 		{
 			@Override
 			public Dimension getPreferredSize()

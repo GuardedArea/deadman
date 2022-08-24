@@ -74,7 +74,7 @@ public class InfoPanel extends JPanel
 
 		this.setLayout(new GridBagLayout());
 		this.setPreferredSize(PANEL_SIZE);
-		this.setBackground(new Color(69, 13, 3));
+		this.setBackground(new Color(43, 43, 43, 255));
 
 		final GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
@@ -99,7 +99,7 @@ public class InfoPanel extends JPanel
 		c.weighty = 0;
 
 		// OpenOSRS version
-		this.add(createPanelTextButton("Kronos Version: " + properties.getProperty(RUNELITE_PLUS_VERSION)), c);
+		this.add(createPanelTextButton("Runelite Version: " + properties.getProperty(RUNELITE_PLUS_VERSION)), c);
 		c.gridy++;
 
 		// Build date
