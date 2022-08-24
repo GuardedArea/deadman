@@ -45,142 +45,165 @@ public class Tirannwn {
         Underground pass jumps... TODO: Animating
          */
         ObjectAction.register(3255, 2161, 4654, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2161, 4653, 1);
-        });
-        ObjectAction.register(3255, 2161, 4654, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2161, 4657, 1);
-        });
-        ObjectAction.register(3254, 2162, 4663, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2162, 4666, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2161, 4653, 1);
+            } else {
+                player.getMovement().teleport(2161, 4657, 1);
+            }
         });
         ObjectAction.register(3254, 2162, 4663, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2162, 4662, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2162, 4666, 1);
+            } else {
+                player.getMovement().teleport(2162, 4662, 1);
+            }
         });
         ObjectAction.register(3254, 2154, 4690, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2154, 4689, 1);
-        });
-        ObjectAction.register(3254, 2154, 4690, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2154, 4693, 1);
-        });
-        ObjectAction.register(3255, 2164, 4686, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2167, 4686, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2154, 4689, 1);
+            } else {
+                player.getMovement().teleport(2154, 4693, 1);
+            }
         });
         ObjectAction.register(3255, 2164, 4686, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2163, 4686, 1);
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
+                player.getMovement().teleport(2163, 4686, 1);
+            } else {
+                player.getMovement().teleport(2167, 4686, 1);
+            }
         });
         ObjectAction.register(3255, 2155, 4704, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2155, 4707, 1);
-        });
-        ObjectAction.register(3255, 2155, 4704, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2155, 4703, 1);
-        });
-        ObjectAction.register(3254, 2155, 4718, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2155, 4721, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2155, 4703, 1);
+            } else {
+                player.getMovement().teleport(2155, 4707, 1);
+            }
         });
         ObjectAction.register(3254, 2155, 4718, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2155, 4717, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2155, 4717, 1);
+            } else {
+                player.getMovement().teleport(2155, 4721, 1);
+            }
         });
         ObjectAction.register(3254, 2158, 4724, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2161, 4724, 1);
-        });
-        ObjectAction.register(3254, 2158, 4724, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2157, 4724, 1);
-        });
-        ObjectAction.register(3254, 2145, 4717, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2145, 4716, 1);
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
+                player.getMovement().teleport(2157, 4724, 1);
+            } else {
+                player.getMovement().teleport(2161, 4724, 1);
+            }
         });
         ObjectAction.register(3254, 2145, 4717, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2145, 4720, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2145, 4716, 1);
+            } else {
+                player.getMovement().teleport(2145, 4720, 1);
+            }
         });
         ObjectAction.register(3255, 2121, 4686, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2120, 4686, 1);
-        });
-        ObjectAction.register(3255, 2121, 4686, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2124, 4686, 1);
-        });
-        ObjectAction.register(3254, 2161, 4637, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2161, 4636, 1);
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
+                player.getMovement().teleport(2120, 4686, 1);
+            } else {
+                player.getMovement().teleport(2124, 4686, 1);
+            }
         });
         ObjectAction.register(3254, 2161, 4637, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2161, 4640, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2161, 4636, 1);
+            } else {
+                player.getMovement().teleport(2161, 4640, 1);
+            }
         });
         ObjectAction.register(3255, 2160, 4625, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2160, 4624, 1);
-        });
-        ObjectAction.register(3255, 2160, 4625, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2160, 4628, 1);
-        });
-        ObjectAction.register(3254, 2148, 4614, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2147, 4614, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2160, 4624, 1);
+            } else {
+                player.getMovement().teleport(2160, 4628, 1);
+            }
         });
         ObjectAction.register(3254, 2148, 4614, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2151, 4614, 1);
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
+                player.getMovement().teleport(2147, 4614, 1);
+            } else {
+                player.getMovement().teleport(2151, 4614, 1);
+            }
         });
         ObjectAction.register(3255, 2161, 4599, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2161, 4598, 1);
-        });
-        ObjectAction.register(3255, 2161, 4599, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2161, 4602, 1);
-        });
-        ObjectAction.register(3254, 2127, 4610, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2126, 4610, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2161, 4598, 1);
+            } else {
+                player.getMovement().teleport(2161, 4602, 1);
+            }
         });
         ObjectAction.register(3254, 2127, 4610, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2130, 4610, 1);
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
+                player.getMovement().teleport(2126, 4610, 1);
+            } else {
+                player.getMovement().teleport(2130, 4610, 1);
+            }
         });
         ObjectAction.register(3255, 2123, 4616, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2123, 4619, 1);
-        });
-        ObjectAction.register(3255, 2123, 4616, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2123, 4615, 1);
-        });
-        ObjectAction.register(3255, 2143, 4604, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2142, 4604, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2123, 4615, 1);
+            } else {
+                player.getMovement().teleport(2123, 4619, 1);
+            }
         });
         ObjectAction.register(3255, 2143, 4604, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2146, 4604, 1);
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
+                player.getMovement().teleport(2142, 4604, 1);
+            } else {
+                player.getMovement().teleport(2146, 4604, 1);
+            }
         });
         ObjectAction.register(3254, 2127, 4592, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2127, 4591, 1);
-        });
-        ObjectAction.register(3254, 2127, 4592, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2127, 4595, 1);
-        });
-        ObjectAction.register(3255, 2123, 4582, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2123, 4581, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2127, 4591, 1);
+            } else {
+                player.getMovement().teleport(2127, 4595, 1);
+            }
         });
         ObjectAction.register(3255, 2123, 4582, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2123, 4585, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2123, 4581, 1);
+            } else {
+                player.getMovement().teleport(2123, 4585, 1);
+            }
         });
         ObjectAction.register(3255, 2126, 4566, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2129, 4566, 1);
-        });
-        ObjectAction.register(3255, 2126, 4566, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2125, 4566, 1);
-        });
-        ObjectAction.register(3254, 2142, 4562, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2142, 4565, 1);
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
+                player.getMovement().teleport(2125, 4566, 1);
+            } else {
+                player.getMovement().teleport(2129, 4566, 1);
+            }
         });
         ObjectAction.register(3254, 2142, 4562, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2142, 4561, 1);
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
+                player.getMovement().teleport(2142, 4561, 1);
+            } else {
+                player.getMovement().teleport(2142, 4565, 1);
+            }
         });
         ObjectAction.register(3254, 2136, 4584, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2135, 4584, 1);
-        });
-        ObjectAction.register(3254, 2136, 4584, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2139, 4584, 1);
-        });
-        ObjectAction.register(3255, 2147, 4583, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2146, 4583, 1);
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
+                player.getMovement().teleport(2135, 4584, 1);
+            } else {
+                player.getMovement().teleport(2139, 4584, 1);
+            }
         });
         ObjectAction.register(3255, 2147, 4583, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2150, 4583, 1);
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
+                player.getMovement().teleport(2146, 4583, 1);
+            } else {
+                player.getMovement().teleport(2150, 4583, 1);
+            }
         });
         ObjectAction.register(3255, 2156, 4582, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2159, 4582, 1);
-        });
-        ObjectAction.register(3255, 2156, 4582, 1, 1, (player, obj) -> {
-            player.getMovement().teleport(2155, 4582, 1);
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
+                player.getMovement().teleport(2155, 4582, 1);
+            } else {
+                player.getMovement().teleport(2159, 4582, 1);
+            }
         });
         ObjectAction.register(3223, 2336, 9793, 0, 1, (player, obj) -> {
             player.getMovement().teleport(2150, 4546, 1);
@@ -225,17 +248,17 @@ public class Tirannwn {
             player.getMovement().teleport(2419, 9605, 0);
         });
         ObjectAction.register(3268, 2404, 9620, 0, 1, (player, obj) -> {
-            if(player.getPosition().getX() > obj.getPosition().getX()) {
+            if (player.getPosition().getX() >= obj.getPosition().getX()) {
                 player.getMovement().teleport(2403, 9620, 0);
             } else {
                 player.getMovement().teleport(2404, 9620, 0);
             }
         });
         ObjectAction.register(3268, 2380, 9619, 0, 1, (player, obj) -> {
-            if(player.getPosition().getX() > obj.getPosition().getX()) {
-                player.getMovement().teleport(2403, 9620, 0);
+            if (player.getPosition().getX() <= obj.getPosition().getX()) {
+                player.getMovement().teleport(2381, 9619, 0);
             } else {
-                player.getMovement().teleport(2404, 9620, 0);
+                player.getMovement().teleport(2380, 9619, 0);
             }
         });
         ObjectAction.register(3238, 2374, 9639, 0, 1, (player, obj) -> {
@@ -251,7 +274,7 @@ public class Tirannwn {
             player.getMovement().teleport(2392, 9646, 0);
         });
         ObjectAction.register(3266, 2393, 9655, 0, 1, (player, obj) -> {
-            if(player.getPosition().getY() > obj.getPosition().getY()) {
+            if (player.getPosition().getY() >= obj.getPosition().getY()) {
                 player.getMovement().teleport(2393, 9654, 0);
             } else {
                 player.getMovement().teleport(2393, 9655, 0);
@@ -270,14 +293,14 @@ public class Tirannwn {
             player.getMovement().teleport(2464, 9676, 0);
         });
         ObjectAction.register(3309, 2482, 9679, 0, 1, (player, obj) -> {
-            if(player.getPosition().getX() > obj.getPosition().getX()) {
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
                 player.getMovement().teleport(2481, 9679, 0);
             } else {
                 player.getMovement().teleport(2483, 9679, 0);
             }
         });
         ObjectAction.register(3309, 2491, 9691, 0, 1, (player, obj) -> {
-            if(player.getPosition().getY() > obj.getPosition().getY()) {
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
                 player.getMovement().teleport(2491, 9690, 0);
             } else {
                 player.getMovement().teleport(2491, 9692, 0);
@@ -296,63 +319,63 @@ public class Tirannwn {
             player.getMovement().teleport(2442, 9716, 0);
         });
         ObjectAction.register(3309, 2458, 9712, 0, 1, (player, obj) -> {
-            if(player.getPosition().getY() > obj.getPosition().getY()) {
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
                 player.getMovement().teleport(2458, 9711, 0);
             } else {
                 player.getMovement().teleport(2458, 9713, 0);
             }
         });
         ObjectAction.register(3309, 2460, 9720, 0, 1, (player, obj) -> {
-            if(player.getPosition().getY() > obj.getPosition().getY()) {
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
                 player.getMovement().teleport(2460, 9719, 0);
             } else {
                 player.getMovement().teleport(2460, 9721, 0);
             }
         });
         ObjectAction.register(3309, 2467, 9723, 0, 1, (player, obj) -> {
-            if(player.getPosition().getX() > obj.getPosition().getX()) {
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
                 player.getMovement().teleport(2466, 9723, 0);
             } else {
                 player.getMovement().teleport(2468, 9723, 0);
             }
         });
         ObjectAction.register(3309, 2467, 9723, 0, 1, (player, obj) -> {
-            if(player.getPosition().getX() > obj.getPosition().getX()) {
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
                 player.getMovement().teleport(2466, 9723, 0);
             } else {
                 player.getMovement().teleport(2468, 9723, 0);
             }
         });
         ObjectAction.register(3309, 2478, 9721, 0, 1, (player, obj) -> {
-            if(player.getPosition().getX() > obj.getPosition().getX()) {
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
                 player.getMovement().teleport(2477, 9721, 0);
             } else {
                 player.getMovement().teleport(2479, 9721, 0);
             }
         });
         ObjectAction.register(3309, 2478, 9724, 0, 1, (player, obj) -> {
-            if(player.getPosition().getX() > obj.getPosition().getX()) {
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
                 player.getMovement().teleport(2477, 9724, 0);
             } else {
                 player.getMovement().teleport(2479, 9724, 0);
             }
         });
         ObjectAction.register(3309, 2485, 9721, 0, 1, (player, obj) -> {
-            if(player.getPosition().getY() > obj.getPosition().getY()) {
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
                 player.getMovement().teleport(2485, 9720, 0);
             } else {
                 player.getMovement().teleport(2485, 9722, 0);
             }
         });
         ObjectAction.register(3309, 2480, 9713, 0, 1, (player, obj) -> {
-            if(player.getPosition().getY() > obj.getPosition().getY()) {
+            if (player.getPosition().getY() > obj.getPosition().getY()) {
                 player.getMovement().teleport(2480, 9712, 0);
             } else {
                 player.getMovement().teleport(2480, 9714, 0);
             }
         });
         ObjectAction.register(3309, 2471, 9706, 0, 1, (player, obj) -> {
-            if(player.getPosition().getX() > obj.getPosition().getX()) {
+            if (player.getPosition().getX() > obj.getPosition().getX()) {
                 player.getMovement().teleport(2470, 9706, 0);
             } else {
                 player.getMovement().teleport(2472, 9706, 0);
