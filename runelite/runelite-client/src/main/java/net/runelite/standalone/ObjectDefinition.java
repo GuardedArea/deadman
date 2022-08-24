@@ -869,6 +869,10 @@ public class ObjectDefinition extends DualNode implements RSObjectDefinition {
    void postDecode() {
       if (id == 23124) {
          actions[0] = "Jump";
+      } else if (id == 3932) {//Hiding interact options on elf camp logs, they just ask as a bridge now
+         actions[0] = null;
+      } else if (id == 3931) {//Hiding interact options on elf camp logs, they just ask as a bridge now
+         actions[0] = null;
       } else if (id == 3216) {
          actions[0] = "Jump";
       } else if (id == 10060) {
