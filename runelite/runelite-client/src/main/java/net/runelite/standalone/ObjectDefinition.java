@@ -867,7 +867,11 @@ public class ObjectDefinition extends DualNode implements RSObjectDefinition {
    }
 
    void postDecode() {
-      if (id == 10060) {
+      if (id == 23124) {
+         actions[0] = "Dig";
+      } else if (id == 3216) {
+         actions[0] = "Jump";
+      } else if (id == 10060) {
          name = "Trading Post";
          actions[0] = "Open";
          actions[1] = "Coffer";
