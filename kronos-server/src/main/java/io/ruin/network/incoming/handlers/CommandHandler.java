@@ -1791,6 +1791,11 @@ public class CommandHandler implements Incoming {
                 return true;
             }
 
+            case "forcemovetest": {
+                player.getMovement().force(0, 10, 0, 0, Integer.parseInt(args[0]), Integer.parseInt(args[1]), Direction.NORTH);
+                return true;
+            }
+
             case "interadv": {
                 player.getPacketSender().sendInterface(Interface.ACCOUNT_MANAGEMENT, 548, Integer.parseInt(args[0]), 1);
                 return true;
